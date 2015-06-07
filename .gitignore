@@ -39,3 +39,8 @@ Thumbs.db
 # Vendor files #
 ################
 vendor/
+
+# Jekyll #
+##########
+*.gem
+Gemfile.lock
