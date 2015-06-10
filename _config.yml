@@ -9,7 +9,7 @@ title:               WT
 tagline:             ''
 description:         ''
 url:                 http://wesleytsai.io
-baseurl:             ''
+baseurl:             http://wesleytsai.io
 paginate:            1
 
 # About/contact
