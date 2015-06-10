@@ -5,11 +5,11 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               WT
-tagline:             ''
+title:               Wesley Tsai
+tagline:             Blog
 description:         ''
 url:                 http://wesleytsai.io
-baseurl:             http://wezleytsai.github.io
+baseurl:             ''
 paginate:            1
 
 # About/contact
