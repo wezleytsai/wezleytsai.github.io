@@ -1,1 +1,26 @@
-exclude: [vendor]
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               Wesley Tsai
+tagline:             ''
+description:         ''
+url:                 http://wesleytsai.io
+baseurl:             ''
+paginate:            1
+
+# About/contact
+author:
+  name:              Wesley Tsai
+  url:               https://github.com/wezleytsai
+  email:             wezley.tsai@gmail.com
+
+# Custom vars
+mygithub:            https://github.com/wezleytsai
+mylinkedin:          https://www.linkedin.com/in/wezleytsai
+
+# Exclude vendor
+exclude:             [vendor]
