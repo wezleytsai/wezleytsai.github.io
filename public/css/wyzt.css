@@ -273,11 +273,14 @@ a.sidebar-nav-item:focus {
   top: 1.2rem;
   left: 1rem;
   z-index: 10;
+
+  -webkit-transition: translate .5s ease-in-out;
+     -moz-transition: translate .5s ease-in-out;
+      -ms-transition: translate .5s ease-in-out;
+          transition: translate .5s ease-in-out;
 }
 
 .sidebar-icon {
-  z-index: 10;
-
   display: block;
   text-align: center; /* to center children spans */
 
@@ -288,20 +291,10 @@ a.sidebar-nav-item:focus {
 
   -webkit-box-shadow: 0 3px 0 0 #800707;
      -moz-box-shadow: 0 3px 0 0 #800707;
-       -o-box-shadow: 0 3px 0 0 #800707;
+      -ms-box-shadow: 0 3px 0 0 #800707;
           box-shadow: 0 3px 0 0 #800707;
 
   cursor: pointer;
-
-  -webkit-transform: rotate(0deg);
-     -moz-transform: rotate(0deg);
-       -o-transform: rotate(0deg);
-          transform: rotate(0deg);
-
-  -webkit-transition: translate .5s ease-in-out;
-     -moz-transition: translate .5s ease-in-out;
-       -o-transition: translate .5s ease-in-out;
-          transition: translate .5s ease-in-out;
 }
 
 .sidebar-icon:active {
@@ -316,24 +309,27 @@ a.sidebar-nav-item:focus {
 
 .sidebar-icon span {
   display: inline-block; /* to center spans, based on top-left origin */
+  pointer-events: none; /* does not register click events => falls through to underlying element */
+
   position: absolute;
   height: 3.5px;
   width: 55%;
   border-radius: 4px;
 
+
   background: #fff;
   opacity: 1;
 
   /* translate left 50% so that it is centered in parent div */
-  -webkit-transform: translate(-50%, 0) rotate(0deg);
-     -moz-transform: translate(-50%, 0) rotate(0deg);
-      -ms-transform: translate(-50%, 0) rotate(0deg);
-          transform: translate(-50%, 0) rotate(0deg);
+  -webkit-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
+     -moz-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
+      -ms-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
+          transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
 
-  -webkit-transition: .5s ease-in-out;
-     -moz-transition: .5s ease-in-out;
-      -ms-transition: .5s ease-in-out;
-          transition: .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+     -moz-transition: all .5s ease-in-out;
+      -ms-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
 }
 
 .sidebar-icon span:nth-child(1) {
@@ -341,7 +337,8 @@ a.sidebar-nav-item:focus {
 }
 
 /* starts out overlapping */
-.sidebar-icon span:nth-child(2),.sidebar-icon span:nth-child(3) {
+.sidebar-icon span:nth-child(2),
+.sidebar-icon span:nth-child(3) {
   top: 16.25px;
 }
 
@@ -363,27 +360,20 @@ a.sidebar-nav-item:focus {
 
 
 /* second and third bars rotate to form 'x' */
-
-.sidebar-container.open .sidebar-icon span:nth-child(2),
-.sidebar-container.open .sidebar-icon span:nth-child(3) {
-    width: 70%;
-    height: 4px;
-}
-
 .sidebar-container.open .sidebar-icon span:nth-child(2) {
   /* translate left 50% so that it is centered in parent div */
-  -webkit-transform: translate(-50%, 0) rotate(45deg);
-     -moz-transform: translate(-50%, 0) rotate(45deg);
-      -ms-transform: translate(-50%, 0) rotate(45deg);
-          transform: translate(-50%, 0) rotate(45deg);
+  -webkit-transform: translate(-50%, 0) rotate(45deg) scale(1.25, 1.25);
+     -moz-transform: translate(-50%, 0) rotate(45deg) scale(1.25, 1.25);
+      -ms-transform: translate(-50%, 0) rotate(45deg) scale(1.25, 1.25);
+          transform: translate(-50%, 0) rotate(45deg) scale(1.25, 1.25);
 }
 
 .sidebar-container.open .sidebar-icon span:nth-child(3) {
   /* translate left 50% so that it is centered in parent div */
-  -webkit-transform: translate(-50%, 0) rotate(-45deg);
-     -moz-transform: translate(-50%, 0) rotate(-45deg);
-      -ms-transform: translate(-50%, 0) rotate(-45deg);
-          transform: translate(-50%, 0) rotate(-45deg);
+  -webkit-transform: translate(-50%, 0) rotate(-45deg) scale(1.25, 1.25);
+     -moz-transform: translate(-50%, 0) rotate(-45deg) scale(1.25, 1.25);
+      -ms-transform: translate(-50%, 0) rotate(-45deg) scale(1.25, 1.25);
+          transform: translate(-50%, 0) rotate(-45deg) scale(1.25, 1.25);
 }
 
 
@@ -403,7 +393,9 @@ a.sidebar-nav-item:focus {
 .masthead,
 .wrap,
 .sidebar,
-.sidebar-container
+.sidebar-container,
+.sidebar-icon,
+.sidebar-icon span
 {
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;

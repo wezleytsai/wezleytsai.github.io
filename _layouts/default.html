@@ -31,16 +31,15 @@
     <script>
       $(document).ready(function() {
 
-        $('.sidebar-container').click(function() {
-          $(this).toggleClass('open');
-        });
-
         $(document).click(function(e) {
-          var target = $(e.target);
-          if(!target.closest('.sidebar-container').length) {
-            $('.sidebar-container').removeClass('open');
+          var $target = $(e.target);
+          var $sidebarButton = $('.sidebar-container');
+          if($target.closest('.sidebar-container').length) {
+            $sidebarButton.toggleClass('open');
+          } else {
+            $sidebarButton.removeClass('open');
           }
-        });
+        })
       });
     </script>
   </body>
