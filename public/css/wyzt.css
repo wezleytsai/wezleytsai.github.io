@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   width: 100%;
   z-index: 5;
-  background-color: #00394D;
+  background-color: #003941;
   padding-top:    1.5rem;
   padding-bottom: 1.5rem;
   margin-bottom: 0;
@@ -135,9 +135,11 @@ h1, h2, h3, h4, h5, h6 {
   .masthead-title {
     text-align: center;
   }
+  /*
   .masthead-title small {
     display: none;
   }
+  */
 }
 
 
@@ -166,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
   overflow-y: auto;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size: 0.5rem;
+  font-size: 1rem;
   color: rgba(255,255,255,.6);
   background-color: #373737;
   -webkit-transition: all .3s ease-in-out;
@@ -183,12 +185,22 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   color: #fff;
 }
+
+.sidebar a:hover {
+  color: #00b4cd;
+}
+
 .sidebar-item {
   padding: 1rem;
 }
 
 .sidebar-item .copyright {
   font-size: 0.75rem;
+}
+@media (min-width: 30em) {
+  .sidebar-item .copyright {
+    font-size: 0.5rem;
+  }
 }
 
 .sidebar-item:first-child {
@@ -256,10 +268,14 @@ a.sidebar-nav-item:focus {
 */
 
 /* Style the sidebar icon */
-.sidebar-icon {
-  position: fixed;
-  top:  1.2rem;
+.sidebar-container {
+  position:fixed;
+  top: 1.2rem;
   left: 1rem;
+  z-index: 10;
+}
+
+.sidebar-icon {
   z-index: 10;
 
   display: block;
@@ -269,6 +285,12 @@ a.sidebar-nav-item:focus {
   height: 36px;
   background-color: #cd1515;
   border-radius: 50%;
+
+  -webkit-box-shadow: 0 3px 0 0 #800707;
+     -moz-box-shadow: 0 3px 0 0 #800707;
+       -o-box-shadow: 0 3px 0 0 #800707;
+          box-shadow: 0 3px 0 0 #800707;
+
   cursor: pointer;
 
   -webkit-transform: rotate(0deg);
@@ -276,22 +298,31 @@ a.sidebar-nav-item:focus {
        -o-transform: rotate(0deg);
           transform: rotate(0deg);
 
-  -webkit-transition: .5s ease-in-out;
-     -moz-transition: .5s ease-in-out;
-       -o-transition: .5s ease-in-out;
-          transition: .5s ease-in-out;
+  -webkit-transition: translate .5s ease-in-out;
+     -moz-transition: translate .5s ease-in-out;
+       -o-transition: translate .5s ease-in-out;
+          transition: translate .5s ease-in-out;
+}
+
+.sidebar-icon:active {
+  position:relative;
+  top: 3px;
+
+  -webkit-box-shadow: 0 1.5px 0 0 #7c0505;
+     -moz-box-shadow: 0 1.5px 0 0 #7c0505;
+       -o-box-shadow: 0 1.5px 0 0 #7c0505;
+          box-shadow: 0 1.5px 0 0 #7c0505;
 }
 
 .sidebar-icon span {
   display: inline-block; /* to center spans, based on top-left origin */
   position: absolute;
   height: 3.5px;
-  width: 60%;
-
+  width: 55%;
+  border-radius: 4px;
 
   background: #fff;
   opacity: 1;
-  border-radius: 4px;
 
   /* translate left 50% so that it is centered in parent div */
   -webkit-transform: translate(-50%, 0) rotate(0deg);
@@ -299,10 +330,10 @@ a.sidebar-nav-item:focus {
       -ms-transform: translate(-50%, 0) rotate(0deg);
           transform: translate(-50%, 0) rotate(0deg);
 
-  -webkit-transition: .25s ease-in-out;
-     -moz-transition: .25s ease-in-out;
-      -ms-transition: .25s ease-in-out;
-          transition: .25s ease-in-out;
+  -webkit-transition: .5s ease-in-out;
+     -moz-transition: .5s ease-in-out;
+      -ms-transition: .5s ease-in-out;
+          transition: .5s ease-in-out;
 }
 
 .sidebar-icon span:nth-child(1) {
@@ -318,13 +349,14 @@ a.sidebar-nav-item:focus {
   top: 23.25px;
 }
 
+/* Sidebar icon animaiton */
 /* first and last bars disappears */
-.sidebar-icon.open span:nth-child(1) {
+.sidebar-container.open .sidebar-icon span:nth-child(1) {
   top: 16.25px;
   width: 0%;
 }
 
-.sidebar-icon.open span:nth-child(4) {
+.sidebar-container.open .sidebar-icon span:nth-child(4) {
   top: 16.25px;
   width: 0%;
 }
@@ -332,11 +364,13 @@ a.sidebar-nav-item:focus {
 
 /* second and third bars rotate to form 'x' */
 
-.sidebar-icon.open span:nth-child(2), .sidebar-icon.open span:nth-child(3) {
-    width: 75%;
+.sidebar-container.open .sidebar-icon span:nth-child(2),
+.sidebar-container.open .sidebar-icon span:nth-child(3) {
+    width: 70%;
+    height: 4px;
 }
 
-.sidebar-icon.open span:nth-child(2) {
+.sidebar-container.open .sidebar-icon span:nth-child(2) {
   /* translate left 50% so that it is centered in parent div */
   -webkit-transform: translate(-50%, 0) rotate(45deg);
      -moz-transform: translate(-50%, 0) rotate(45deg);
@@ -344,7 +378,7 @@ a.sidebar-nav-item:focus {
           transform: translate(-50%, 0) rotate(45deg);
 }
 
-.sidebar-icon.open span:nth-child(3) {
+.sidebar-container.open .sidebar-icon span:nth-child(3) {
   /* translate left 50% so that it is centered in parent div */
   -webkit-transform: translate(-50%, 0) rotate(-45deg);
      -moz-transform: translate(-50%, 0) rotate(-45deg);
@@ -369,7 +403,8 @@ a.sidebar-nav-item:focus {
 .masthead,
 .wrap,
 .sidebar,
-.sidebar-icon {
+.sidebar-container
+{
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;
       -ms-backface-visibility: hidden;
@@ -378,20 +413,21 @@ a.sidebar-nav-item:focus {
 
 .masthead,
 .wrap,
-.sidebar-icon {
+.sidebar-container
+{
   -webkit-transition: -webkit-transform .3s ease-in-out;
           transition: transform .3s ease-in-out;
 }
 
-.sidebar-icon.open + .sidebar {
+.sidebar-container.open + .sidebar {
   z-index: 10;
   visibility: visible;
 }
 
-.sidebar-icon.open ~ .masthead,
-.sidebar-icon.open ~ .sidebar,
-.sidebar-icon.open ~ .wrap,
-.sidebar-icon.open {
+.sidebar-container.open ~ .masthead,
+.sidebar-container.open ~ .sidebar,
+.sidebar-container.open ~ .wrap,
+.sidebar-container.open {
   -webkit-transform: translateX(14rem);
      -moz-transform: translateX(14rem);
       -ms-transform: translateX(14rem);

@@ -31,14 +31,14 @@
     <script>
       $(document).ready(function() {
 
-        $('.sidebar-icon').click(function() {
+        $('.sidebar-container').click(function() {
           $(this).toggleClass('open');
         });
 
         $(document).click(function(e) {
           var target = $(e.target);
-          if(!target.closest('.sidebar-icon').length) {
-            $('.sidebar-icon').removeClass('open');
+          if(!target.closest('.sidebar-container').length) {
+            $('.sidebar-container').removeClass('open');
           }
         });
       });

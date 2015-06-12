@@ -10,7 +10,7 @@ tagline:             Blog
 description:         ''
 url:                 http://wesleytsai.io
 baseurl:             ''
-paginate:            1
+paginate:            3
 
 # About/contact
 author:
@@ -24,3 +24,12 @@ mylinkedin:          https://www.linkedin.com/in/wezleytsai
 
 # Exclude vendor
 exclude:             [vendor]
+
+
+# TODO: style consecutive posts differently
+# TODO: new logo
+# TODO: related posts via tags
+# TODO: portfolio page
+# TODO: profile pic/intro in sidebar
+# TODO: blog posts archive/listing
+# TODO: post page - change masthead title to post title or something?
