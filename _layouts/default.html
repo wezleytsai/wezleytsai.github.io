@@ -43,7 +43,15 @@
           } else {
             $sidebarButton.removeClass('open');
           }
-        })
+        });
+
+        $('#go-to-solution').click(function(e) {
+          e.preventDefault(); // prevent default behavior - "jump" to anchor
+          $('html, body').animate({
+            scrollTop: $('#solution').offset().top
+          }, 750);
+        });
+
       });
     </script>
   </body>
