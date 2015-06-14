@@ -16,7 +16,7 @@ paginate:            3
 author:
   name:              Wesley Tsai
   url:               https://github.com/wezleytsai
-  email:             wezley.tsai@gmail.com
+  email:             &#119;&#101;&#122;&#108;&#101;&#121;&#046;&#116;&#115;&#097;&#105;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
 
 # Custom vars
 mygithub:            https://github.com/wezleytsai
@@ -25,11 +25,6 @@ mylinkedin:          https://www.linkedin.com/in/wezleytsai
 # Exclude vendor
 exclude:             [vendor]
 
-
-# TODO: style consecutive posts differently
-# TODO: new logo
-# TODO: related posts via tags
-# TODO: portfolio page
-# TODO: profile pic/intro in sidebar
-# TODO: blog posts archive/listing
-# TODO: post page - change masthead title to post title or something?
+# Sitemap
+gems:
+  - jekyll-sitemap

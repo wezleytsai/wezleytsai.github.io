@@ -59,6 +59,7 @@ _gh_pages
 _site
 .ruby-version
 .sass-cache
+todo.md
 
 # Numerous always-ignore extensions
 *.diff
