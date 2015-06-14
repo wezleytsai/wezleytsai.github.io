@@ -38,9 +38,10 @@
         $(document).click(function(e) {
           var $target = $(e.target);
           var $sidebarButton = $('.sidebar-container');
+          var $sidebar = $('.sidebar');
           if($target.closest('.sidebar-container').length) {
             $sidebarButton.toggleClass('open');
-          } else {
+          } else if(!$target.closest('.sidebar').length) {
             $sidebarButton.removeClass('open');
           }
         });
