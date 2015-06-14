@@ -33,11 +33,13 @@ JSON's **grammar** defines the correct format for JSON text. These are the rules
 
 JSON grammar can be (partially) defined like this:
 
-    <JSON>    ::= <value>
-    <value>   ::= <object> | <array> | <boolean> | <string> | <number> | <null>
-    <array>   ::= "[" [ <value> {"," <value>}* ] "]"
-    <object>  ::= "{" [ {<kv>} {"," <kv>}* ] "}"
-    <kv>      ::= <string> ":" <value>
+<pre><code class="nohighlight"><!--
+--><JSON&gt;    ::= <value&gt;
+<value&gt;   ::= <object&gt; | <array&gt; | <boolean&gt; | <string&gt; | <number&gt; | <null&gt;
+<array&gt;   ::= "[" [ <value&gt; {"," <value&gt;}* ] "]"
+<object&gt;  ::= "{" [ {<kv&gt;} {"," <kv&gt;}* ] "}"
+<kv&gt;      ::= <string&gt; ":" <value&gt;
+</code></pre>
 
 This is **BNF** (Backus-Naur Form) notation to describe context-free grammars. I define the grammar for `<JSON>` to be a `<value>`. And on the next line, I define `<value>` to be any of the 6 data types - object, array, boolean, string, number, or null.
 
@@ -58,11 +60,13 @@ The grammar for booleans, strings, numbers, and null can also be further defined
 
 A parse tree, or expression tree, is the result of parsing the text into components that fit the grammar. In our example, given the JSON text **[9,&ldquo;cat"]**, the parse tree would look something like this:
 
-    <JSON> --- <value> --- <array> --- "["
-                                   \__ <value> --- <number> ---> 9
-                                   \__ ","
-                                   \__ <value> --- <string> ---> "cat"
-                                   \__ "]"
+<pre><code class="nohighlight"><!--
+--><JSON&gt; --- <value&gt; --- <array&gt; --- "["
+                               \__ <value&gt; --- <number&gt; --- 9
+                               \__ ","
+                               \__ <value&gt; --- <string&gt; --- "cat"
+                               \__ "]"
+</code></pre>
 
 A **Recursive Descent Parser**, one of the simplest parsers, uses a top-down parsing approach, meaning we look at the highest level (the array in this case), and then work downwards (or rightwards in my graph) to parse its elements.
 

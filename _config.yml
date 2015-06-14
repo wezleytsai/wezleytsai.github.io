@@ -10,7 +10,7 @@ tagline:             Blog
 description:         ''
 url:                 http://wesleytsai.io
 baseurl:             ''
-paginate:            3
+paginate:            1
 
 # About/contact
 author:
