@@ -36,8 +36,8 @@ JSON grammar can be (partially) defined like this:
 <pre><code class="nohighlight"><!--
 --><JSON&gt;     ::= <value&gt;
 <value&gt;    ::= <object&gt; | <array&gt; | <boolean&gt; | <string&gt; | <number&gt; | <null&gt;
-<array&gt;    ::= "[" [ <value&gt; {"," <value&gt;}* ] "]"
-<object&gt;   ::= "{" [ {<property&gt;} {"," <property&gt;}* ] "}"
+<array&gt;    ::= "[" [<value&gt;] {"," <value&gt;}* "]"
+<object&gt;   ::= "{" [<property&gt;] {"," <property&gt;}* "}"
 <property&gt; ::= <string&gt; ":" <value&gt;
 </code></pre>
 
