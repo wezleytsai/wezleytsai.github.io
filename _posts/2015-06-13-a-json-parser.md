@@ -34,18 +34,18 @@ JSON's **grammar** defines the correct format for JSON text. These are the rules
 JSON grammar can be (partially) defined like this:
 
 <pre><code class="nohighlight"><!--
---><JSON&gt;    ::= <value&gt;
-<value&gt;   ::= <object&gt; | <array&gt; | <boolean&gt; | <string&gt; | <number&gt; | <null&gt;
-<array&gt;   ::= "[" [ <value&gt; {"," <value&gt;}* ] "]"
-<object&gt;  ::= "{" [ {<kv&gt;} {"," <kv&gt;}* ] "}"
-<kv&gt;      ::= <string&gt; ":" <value&gt;
+--><JSON&gt;     ::= <value&gt;
+<value&gt;    ::= <object&gt; | <array&gt; | <boolean&gt; | <string&gt; | <number&gt; | <null&gt;
+<array&gt;    ::= "[" [ <value&gt; {"," <value&gt;}* ] "]"
+<object&gt;   ::= "{" [ {<property&gt;} {"," <property&gt;}* ] "}"
+<property&gt; ::= <string&gt; ":" <value&gt;
 </code></pre>
 
 This is **BNF** (Backus-Naur Form) notation to describe context-free grammars. I define the grammar for `<JSON>` to be a `<value>`. And on the next line, I define `<value>` to be any of the 6 data types - object, array, boolean, string, number, or null.
 
 On the third line, I define an `<array>` as text that begins with an opening bracket, followed by `<value>`\'s separated by commas, ending with a closing bracket.
 
-On the fourth line, I define an `<object>` in a similar way to arrays, except each element is a `<kv>`, standing for _key-value pair_. Each `<kv>`, defined on the last line, is a `<string>` and `<value>` separated by a colon.
+On the fourth line, I define an `<object>` in a similar way to arrays, except it contains a series of `<property>`'s separated by commas. A `<property>` is defined on the last line as a `<string>` (the property name) and `<value>` (property value), separated by a colon.
 
 Quick note on the notation:
 
