@@ -80,13 +80,13 @@ Simply add the proper class name to some `<i>` tags and marvel at the beauty of 
 
 ### Animating Sidebar Icon ###
 
-I really wanted an animating "hamburger" button that revealed the sidebar. I found [these sample ](http://codepen.io/designcouch/pen/Atyop) hamburger icons that animated to <i class="fa fa-remove"></i>'s using only CSS (and jQuery for the mouseclick event). I ended up going with a modified version of the third icon.
+I really wanted an animating "hamburger" button that revealed the sidebar. I found [these sample ](http://codepen.io/designcouch/pen/Atyop) hamburger icons that animated to <i class="fa fa-remove"></i>'s using only CSS (and jQuery for the mouse click event). I ended up going with a modified version of the third icon.
 
 Here is [my animating icon](http://codepen.io/wezleytsai/pen/QbqbVa) on CodePen if you want to check it out.
 
 ### Highlighting Code ###
 
-The content of my blog is related to software development, so I have a lot of code blocks. You can use Markdown to create `pre` and `code` tags easily, but it won't help you highlight key words for whatever language your code is in. Enter [Highlight.js] [highlightjs], which searches your html for `<pre><code>` tags, detects the language automatically, and highlights syntax automatically. Add it to your blog with these lines of code (this would use the "default" theme):
+The content of my blog is related to software development, so I have a lot of code blocks. You can use Markdown to create `pre` and `code` tags easily, but it won't help you highlight key words for whatever language your code is in. Enter [Highlight.js] [highlightjs], which searches your html for `<pre><code>` tags, detects the language automatically, and highlights syntax for you. Add it to your blog with these lines of code (this would use the "default" theme):
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
@@ -102,4 +102,4 @@ There are tons of themes to choose from - check out the [live demo] [highlightjs
 - [Markdown] [markdown]
 - [Font Awesome] [font awesome]
 - [Highlight.js] [highlightjs]
-- [Here](http://joshualande.com/jekyll-github-pages-poole/)'s a great post with a walkthrough of setting up a blog with GitHub pages, jekyll, poole, and more.
+- Here's a great [post](http://joshualande.com/jekyll-github-pages-poole/) with a walkthrough of setting up a blog with GitHub pages, jekyll, poole, and more.
