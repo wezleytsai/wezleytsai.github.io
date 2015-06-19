@@ -3,6 +3,7 @@ layout: post
 title: A JSON Parser
 ---
 
+<!-- links -->
 [underscorejs]: http://underscorejs.org/
 
 [oreilly-json-parser]: http://archive.oreilly.com/pub/a/javascript/excerpts/javascript-good-parts/json.html
@@ -12,6 +13,8 @@ title: A JSON Parser
 [mdn-json-parse]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 
 [json.org]: http://json.org
+
+<!-- post -->
 
 I recently built a JSON parser in JavaScript from scratch. I learned a lot on data formats/parse trees/grammar/recursion that helped me break down and solve the problem. There are many different (and perhaps better) approaches to parsing JSON, but here's a little walkthrough of my implementation. First, a little background...
 

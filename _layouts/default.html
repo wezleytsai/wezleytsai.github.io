@@ -4,18 +4,8 @@
   {% include head.html %}
 
   <body>
-
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-    <!-- Highlight -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
     {% include sidebar.html %}
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
     <div class="masthead">
      <div class="container">
        <h3 class="masthead-title">
@@ -40,12 +30,15 @@
           var $sidebarButton = $('.sidebar-container');
           var $sidebar = $('.sidebar');
           if($target.closest('.sidebar-container').length) {
+            // if sidebar button clicked => toggle
             $sidebarButton.toggleClass('open');
           } else if(!$target.closest('.sidebar').length) {
+            // if anywhere other than sidebar or sidebar button => close sidebar
             $sidebarButton.removeClass('open');
           }
         });
 
+        // 1st blog post - scroll up
         $('#go-to-solution').click(function(e) {
           e.preventDefault(); // prevent default behavior - "jump" to anchor
           $('html, body').animate({

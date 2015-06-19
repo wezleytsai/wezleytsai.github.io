@@ -327,10 +327,10 @@ a.sidebar-nav-item:focus {
           transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
 
   /* transition settings for icon when sidebar is closing - first rotate and then translate*/
-  -webkit-transition: top .25s ease-in-out .25s, width .05s ease-in-out .25s, -webkit-transform .25s ease-in-out;
-     -moz-transition: top .25s ease-in-out .25s, width .05s ease-in-out .25s,    -moz-transform .25s ease-in-out;
-      -ms-transition: top .25s ease-in-out .25s, width .05s ease-in-out .25s,     -ms-transform .25s ease-in-out;
-          transition: top .25s ease-in-out .25s, width .05s ease-in-out .25s,         transform .25s ease-in-out;
+  -webkit-transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s, -webkit-transform .25s ease-in-out;
+     -moz-transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s,    -moz-transform .25s ease-in-out;
+      -ms-transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s,     -ms-transform .25s ease-in-out;
+          transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s,         transform .25s ease-in-out;
 }
 
 .sidebar-icon span:nth-child(1) {
@@ -355,21 +355,21 @@ Sidebar icon animaiton
 
 .sidebar-container.open .sidebar-icon span {
   /* transition settings for icon when sidebar is opening - first translate and then rotate */
-  -webkit-transition: top .25s ease-in-out, width .25s ease-in-out, -webkit-transform .25s ease-in-out .25s;
-     -moz-transition: top .25s ease-in-out, width .25s ease-in-out,    -moz-transform .25s ease-in-out .25s;
-      -ms-transition: top .25s ease-in-out, width .25s ease-in-out,     -ms-transform .25s ease-in-out .25s;
-          transition: top .25s ease-in-out, width .25s ease-in-out,         transform .25s ease-in-out .25s;
+  -webkit-transition: top .25s ease-in-out, opacity 0s ease-in-out .25s, -webkit-transform .25s ease-in-out .25s;
+     -moz-transition: top .25s ease-in-out, opacity 0s ease-in-out .25s,    -moz-transform .25s ease-in-out .25s;
+      -ms-transition: top .25s ease-in-out, opacity 0s ease-in-out .25s,     -ms-transform .25s ease-in-out .25s;
+          transition: top .25s ease-in-out, opacity 0s ease-in-out .25s,         transform .25s ease-in-out .25s;
 }
 
 /* first and last bars disappears */
 .sidebar-container.open .sidebar-icon span:nth-child(1) {
   top: 16.25px;
-  width: 0%;
+  opacity: 0;
 }
 
 .sidebar-container.open .sidebar-icon span:nth-child(4) {
   top: 16.25px;
-  width: 0%;
+  opacity: 0;
 }
 
 
