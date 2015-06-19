@@ -368,12 +368,8 @@ The documentation for `JSON.parse` on [MDN] [mdn-json-parse] shows that there's 
 
 ## Resources ##
 
-I found the Wikipedia entries for parse trees and BNF notation pretty informative.
-
-The railroad diagrams on [JSON.org] [json.org] are great for visualizing the JSON data syntax.
-
-For more on Recursive Descent Parsers, check out these links:
-
-[Recursive Descent Parser Tutorial] [progzoo-rdp-tutorial]
-
-[JSON Parser Example] [oreilly-json-parser]
+- I found the Wikipedia entries for parse trees and BNF notation pretty informative.
+- The railroad diagrams on [JSON.org] [json.org] are great for visualizing the JSON data syntax.
+- For more on Recursive Descent Parsers, check out these links:
+  - [Recursive Descent Parser Tutorial] [progzoo-rdp-tutorial]
+  - [JSON Parser Example] [oreilly-json-parser]
