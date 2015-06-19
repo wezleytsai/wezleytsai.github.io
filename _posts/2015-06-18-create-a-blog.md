@@ -29,7 +29,7 @@ This blog was created using [GitHub pages] [github pages] and [Jekyll] [jekyll].
 
 ## Step 0: GitHub ##
 
-First off, you need to know some git and have a GitHub account. In short, **git** is an open source version control system and **GitHub** is an online git repository service. If you are not familiar, there are plenty of resources to help you out. Start with this [tutorial] [git immersion] and the [GitHub] [github] website.
+First off, you need to know some git and have a GitHub account. In short, **git** is an open source version control system and **GitHub** is an online git repository service. If you are not familiar, there are plenty of resources to help you out. Start with this [tutorial] [git immersion] and the [GitHub] [github] website. Or simply ask Google.
 
 ## Step 1: GitHub Pages ##
 
