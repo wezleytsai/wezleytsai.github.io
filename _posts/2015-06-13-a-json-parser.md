@@ -13,6 +13,8 @@ title: A JSON Parser
 
 I recently built a JSON parser in JavaScript from scratch. I learned a lot on data formats/parse trees/grammar/recursion that helped me break down and solve the problem. There are many different (and perhaps better) approaches to parsing JSON, but here's a little walkthrough of my implementation. First, a little background...
 
+<!--excerpt-->
+
 ## JSON ##
 
 **JSON** (JavaScript Object Notation) is a data-interchange format commonly used over the web to transmit data.

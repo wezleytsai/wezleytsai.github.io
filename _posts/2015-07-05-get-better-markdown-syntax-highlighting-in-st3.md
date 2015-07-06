@@ -19,6 +19,8 @@ Many color themes for Sublime Text 3 do not have very good support for highlight
 
 Here's a solution for those that want to use a theme with Markdown-support only for Markdown files and keep their preferred theme for everything else.
 
+<!--excerpt-->
+
 **Before**: No syntax highlighting whatsoever for the heading, numbered list, code, or code block using my preferred theme
 ![Without Markdown Light][before]
 

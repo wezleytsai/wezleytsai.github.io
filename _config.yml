@@ -11,7 +11,7 @@ by:                  by Wesley Tsai
 description:         ''
 url:                 http://wesleytsai.io
 baseurl:             ''
-paginate:            1
+paginate:            6
 
 # About/contact
 author:
@@ -26,8 +26,9 @@ mylinkedin:          https://www.linkedin.com/in/wezleytsai
 # Exclude vendor
 exclude:             [vendor]
 
-# Markdown
+# Conversion
 markdown: redcarpet
+excerpt_separator: "<!--excerpt-->"
 
 # Sitemap
 gems:
