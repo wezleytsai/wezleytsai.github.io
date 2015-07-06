@@ -26,6 +26,9 @@ mylinkedin:          https://www.linkedin.com/in/wezleytsai
 # Exclude vendor
 exclude:             [vendor]
 
+# Markdown
+markdown: redcarpet
+
 # Sitemap
 gems:
   - jekyll-sitemap
