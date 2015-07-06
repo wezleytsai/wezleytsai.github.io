@@ -22,7 +22,6 @@ title: Creating a Blog using GitHub Pages and Jekyll
 
 [highlightjs]: https://highlightjs.org/
 [highlightjs demo]: https://highlightjs.org/static/demo/
-
 <!-- post -->
 
 This blog was created using [GitHub pages] [github pages] and [Jekyll] [jekyll]. The process was pretty straight forward, but there are several components to creating a complete blog and I wanted to document all the helpful links and resources that I relied on.
@@ -45,8 +44,10 @@ Note that if you are creating a website for a project instead of your user accou
 
 To create your Jekyll directory, follow the quick-start guide on [Jekyll] [jekyll quickstart]. You should have cloned your GitHub repository onto your local computer, so navigate to that folder (which is empty aside from the index.html file that says "Hello World") and run the following:
 
-    ~$ gem install jekyll
-    ~$ jekyll new .
+```bash
+~$ gem install jekyll
+~$ jekyll new .
+```
 
 Now you have Jekyll installed and ready to go, but your folder still only has that index.html file!
 
@@ -72,11 +73,15 @@ You should have a fully functional blog at this point at your own custom domain 
 
 [Font Awesome] [font awesome] has a collection of scalable vector icons that you can use for your blog. I used it for all the icons you see in my sidebar (at the time of this writing). You can use them by just adding this line in your html:
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+```html
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+```
 
 Simply add the proper class name to some `<i>` tags and marvel at the beauty of your website. Here is a cube <i class="fa fa-cube"></i>, using the code:
 
-<pre><code><i class="fa fa-cube"&gt;</i&gt;</code></pre>
+```html
+<i class="fa fa-cube"></i>
+```
 
 ### Animating Sidebar Icon ###
 
@@ -88,9 +93,11 @@ Here is [my animating icon](http://codepen.io/wezleytsai/pen/QbqbVa) on CodePen 
 
 The content of my blog is related to software development, so I have a lot of code blocks. You can use Markdown to create `pre` and `code` tags easily, but it won't help you highlight key words for whatever language your code is in. Enter [Highlight.js] [highlightjs], which searches your html for `<pre><code>` tags, detects the language automatically, and highlights syntax for you. Add it to your blog with these lines of code (this would use the "default" theme):
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+```html
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+```
 
 There are tons of themes to choose from - check out the [live demo] [highlightjs demo]. I'm using the theme _Hybrid_.
 
