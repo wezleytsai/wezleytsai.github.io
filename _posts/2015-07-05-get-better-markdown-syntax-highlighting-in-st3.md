@@ -48,5 +48,5 @@ To get proper syntax highlighting within code blocks, specify the langauge after
 
 ## Alternatives ##
 
-If Markdown Light does not suit your tastes, you can follow the same procedure above to associate any color theme with Markdown support with .md files. One possible alternative is [Markdown Extended][markdown extended], which is the Monokai theme with Markdown support. Another is [Afterglow][afterglow].
+If Markdown Light does not suit your tastes, you can follow the same procedure above to associate any Markdown color theme with .md files. One possible alternative is [Markdown Extended][markdown extended], which uses the Monokai color theme with Markdown support. Another is [Afterglow][afterglow].
 
