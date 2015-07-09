@@ -155,8 +155,8 @@ pre {
 code {
   padding: .25em .5em;
   font-size: 85%;
-  color: #9A0F32;
-  background-color: #f9f9f9;
+  color: #27767F;
+  background-color: #EEEEEE;
   border-radius: 3px;
 
   white-space: pre;
@@ -177,7 +177,6 @@ pre {
 
 pre code {
   padding: 0;
-  font-size: 100%;
   color: inherit;
   background-color: transparent;
 }
@@ -359,7 +358,6 @@ tbody tr:nth-child(odd) th {
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid #eee;
 }
 .related-posts {
   padding-left: 0;

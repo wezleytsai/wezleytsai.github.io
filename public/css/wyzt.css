@@ -41,15 +41,23 @@ body {
 }
 
 html {
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Serif', Palatino, serif;
+  font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Noto Serif", Palatino, serif;
   font-weight: 400;
   color: #313131;
 }
 
+/* Code */
+code,
+pre {
+  font-family: 'Roboto Mono', Menlo, "Courier New", monospace;
+  font-size: 95%;
+  padding: 0.05rem 0.25rem;
+}
 
 /*
  * Wrapper
@@ -62,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 .wrap {
   position: relative;
   width: 100%;
+  top: 60px;
 }
 
 
@@ -108,13 +117,13 @@ h1, h2, h3, h4, h5, h6 {
 .masthead {
   position: fixed;
   top: 0;
+  height: 90px;
   width: 100%;
   z-index: 5;
-  background-color: #003941;
+  background-color: #217290;
   padding-top:    1.5rem;
   padding-bottom: 1.5rem;
   margin-bottom: 0;
-  border-bottom: 1px solid #eee;
 }
 .masthead-title {
   margin-top: 0;
@@ -123,7 +132,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 .masthead-title a {
   color: #ededed;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: 'Geo', sans-serif;
+  font-size: 2.15rem;
 }
+
+.masthead-title a:hover {
+  text-decoration: none;
+}
+
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
@@ -160,6 +180,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Style and "hide" the sidebar */
 .sidebar {
+  -webkit-transition: all .2s ease-in-out, left .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out, left .2s ease-in-out;
+       -o-transition: all .2s ease-in-out, left .2s ease-in-out;
+          transition: all .2s ease-in-out, left .2s ease-in-out;
+
   position: fixed;
   top: 0;
   bottom: 0;
@@ -167,15 +192,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 14rem;
   visibility: hidden;
   overflow-y: auto;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   color: rgb(255,255,255);
   color: rgba(255,255,255,.6);
   background-color: #373737;
-  -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-       -o-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+
 }
 @media (min-width: 30em) {
   .sidebar {
@@ -194,21 +215,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-item {
-  padding: 1rem;
+  /*padding: 1rem;*/
+  position: relative;
+  height: 90px;
 }
 
-.sidebar-item .copyright {
-  font-size: 0.75rem;
+.sidebar .contact {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%); /* translate based on this items W/H */
+}
+
+.copyright {
+  padding: .8rem 1rem;
+  font-size: 0.6rem;
 }
 @media (min-width: 30em) {
-  .sidebar-item .copyright {
-    font-size: 0.5rem;
+  .copyright {
+    font-size: 0.6rem;
   }
 }
 
 .sidebar-item:first-child {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  /*margin-top: 6px;
+  margin-bottom: 6px;*/
 }
 
 .sidebar-item p:last-child {
@@ -236,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*.sidebar-nav-item:first-child {
-  margin-top: 2.5rem; 
+  margin-top: 2.5rem;
 }*/
 
 /* font awesome */
@@ -257,7 +287,8 @@ a.sidebar-nav-item:focus {
   .sidebar-item {
     padding: 1.0rem 1.5rem;
   }
-  .sidebar-nav-item {
+  .sidebar-nav-item,
+  .copyright {
     padding-left:  1.5rem;
     padding-right: 1.5rem;
   }
@@ -277,29 +308,29 @@ a.sidebar-nav-item:focus {
 /* Style the sidebar icon */
 .sidebar-container {
   position:fixed;
-  top: 1.2rem;
+  top: 25px;
   left: 1rem;
-  z-index: 10;
+  z-index: 15;
 
-  -webkit-transition: translate .5s ease-in-out;
-     -moz-transition: translate .5s ease-in-out;
-       -o-transition: translate .5s ease-in-out;
-          transition: translate .5s ease-in-out;
+  -webkit-transition: translate .1s ease-in-out;
+     -moz-transition: translate .1s ease-in-out;
+       -o-transition: translate .1s ease-in-out;
+          transition: translate .1s ease-in-out;
 }
 
 .sidebar-icon {
   display: block;
   text-align: center; /* to center children spans */
 
-  width: 36px;
-  height: 36px;
-  background-color: #cd1515;
-  border-radius: 50%;
+  -webkit-transition: background-color .1s ease-in-out;
+     -moz-transition: background-color .1s ease-in-out;
+       -o-transition: background-color .1s ease-in-out;
+          transition: background-color .1s ease-in-out;
 
-  -webkit-box-shadow: 0 3px 0 0 #800707;
-     -moz-box-shadow: 0 3px 0 0 #800707;
-      -ms-box-shadow: 0 3px 0 0 #800707;
-          box-shadow: 0 3px 0 0 #800707;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5%;
 
   cursor: pointer;
 }
@@ -307,11 +338,6 @@ a.sidebar-nav-item:focus {
 .sidebar-icon:active {
   position:relative;
   top: 1.5px;
-
-  -webkit-box-shadow: 0 1.5px 0 0 #7c0505;
-     -moz-box-shadow: 0 1.5px 0 0 #7c0505;
-       -o-box-shadow: 0 1.5px 0 0 #7c0505;
-          box-shadow: 0 1.5px 0 0 #7c0505;
 }
 
 .sidebar-icon span {
@@ -319,13 +345,9 @@ a.sidebar-nav-item:focus {
   pointer-events: none; /* does not register click events => falls through to underlying element */
 
   position: absolute;
-  height: 3.5px;
-  width: 55%;
-  border-radius: 4px;
-
-
-  background: #fff;
-  opacity: 1;
+  height: 3px;
+  width: 60%;
+  border-radius: 0;
 
   /* translate left 50% so that it is centered in parent div */
   -webkit-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
@@ -335,24 +357,27 @@ a.sidebar-nav-item:focus {
           transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
 
   /* transition settings for icon when sidebar is closing - first rotate and then translate*/
-  -webkit-transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s, -webkit-transform .25s ease-in-out;
-     -moz-transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s,    -moz-transform .25s ease-in-out;
-       -o-transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s,     -ms-transform .25s ease-in-out;
-          transition: top .25s ease-in-out .25s, opacity .05s ease-in-out .25s,         transform .25s ease-in-out;
+  -webkit-transition: background-color .1s ease-in-out, top .15s ease-in-out .15s, opacity .05s ease-in-out .15s, -webkit-transform .15s ease-in-out;
+     -moz-transition: background-color .1s ease-in-out, top .15s ease-in-out .15s, opacity .05s ease-in-out .15s,    -moz-transform .15s ease-in-out;
+       -o-transition: background-color .1s ease-in-out, top .15s ease-in-out .15s, opacity .05s ease-in-out .15s,     -ms-transform .15s ease-in-out;
+          transition: background-color .1s ease-in-out, top .15s ease-in-out .15s, opacity .05s ease-in-out .15s,         transform .15s ease-in-out;
+
+  background: #fff;
+  opacity: 1;
 }
 
 .sidebar-icon span:nth-child(1) {
-  top: 9.25px;
+  top: 9.5px;
 }
 
 /* starts out overlapping */
 .sidebar-icon span:nth-child(2),
 .sidebar-icon span:nth-child(3) {
-  top: 16.25px;
+  top: 18.5px; /* sidebar-icon length / 2 - span height / 2 */
 }
 
 .sidebar-icon span:nth-child(4) {
-  top: 23.25px;
+  top: 27.5px;
 }
 
 /*
@@ -363,20 +388,20 @@ Sidebar icon animaiton
 
 .open .sidebar-icon span {
   /* transition settings for icon when sidebar is opening - first translate and then rotate */
-  -webkit-transition: top .25s ease-in-out, opacity 0s ease-in-out .25s, -webkit-transform .25s ease-in-out .25s;
-     -moz-transition: top .25s ease-in-out, opacity 0s ease-in-out .25s,    -moz-transform .25s ease-in-out .25s;
-       -o-transition: top .25s ease-in-out, opacity 0s ease-in-out .25s,     -ms-transform .25s ease-in-out .25s;
-          transition: top .25s ease-in-out, opacity 0s ease-in-out .25s,         transform .25s ease-in-out .25s;
+  -webkit-transition: top .15s ease-in-out, opacity 0s ease-in-out .15s, -webkit-transform .15s ease-in-out .15s;
+     -moz-transition: top .15s ease-in-out, opacity 0s ease-in-out .15s,    -moz-transform .15s ease-in-out .15s;
+       -o-transition: top .15s ease-in-out, opacity 0s ease-in-out .15s,     -ms-transform .15s ease-in-out .15s;
+          transition: top .15s ease-in-out, opacity 0s ease-in-out .15s,         transform .15s ease-in-out .15s;
 }
 
 /* first and last bars disappears */
 .open .sidebar-icon span:nth-child(1) {
-  top: 16.25px;
+  top: 19px;
   opacity: 0;
 }
 
 .open .sidebar-icon span:nth-child(4) {
-  top: 16.25px;
+  top: 19px;
   opacity: 0;
 }
 
@@ -431,10 +456,10 @@ Sidebar icon animaiton
 .wrap,
 .sidebar-container
 {
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-     -moz-transition: -webkit-transform .3s ease-in-out;
-       -o-transition: -webkit-transform .3s ease-in-out;
-          transition: transform .3s ease-in-out;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+     -moz-transition: -webkit-transform .2s ease-in-out;
+       -o-transition: -webkit-transform .2s ease-in-out;
+          transition: transform .2s ease-in-out;
 }
 
 .open + .sidebar {
@@ -444,13 +469,28 @@ Sidebar icon animaiton
 
 .open ~ .masthead,
 .open ~ .sidebar,
-.open ~ .wrap,
-.open {
+.open ~ .wrap {
   -webkit-transform: translateX(14rem);
      -moz-transform: translateX(14rem);
       -ms-transform: translateX(14rem);
        -o-transform: translateX(14rem);
           transform: translateX(14rem);
+}
+
+.open .sidebar-icon {
+  background-color: #808080;
+}
+
+.open .sidebar-icon span {
+  background-color: #000;
+}
+
+.open {
+  -webkit-transform: translateX(10rem);
+     -moz-transform: translateX(10rem);
+      -ms-transform: translateX(10rem);
+       -o-transform: translateX(10rem);
+          transform: translateX(10rem);
 }
 
 
@@ -463,8 +503,10 @@ Sidebar icon animaiton
 
 .page,
 .post {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
   padding-top: 1rem;
+  border-bottom: 0.1rem solid #F0F0F0;
 }
 
 .post:last-child {
@@ -500,7 +542,6 @@ Sidebar icon animaiton
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid #eee;
 }
 .related-posts {
   padding-left: 0;

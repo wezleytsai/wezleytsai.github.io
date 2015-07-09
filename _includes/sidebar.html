@@ -13,9 +13,11 @@
 <div class="sidebar" id="sidebar">
 
   <div class="sidebar-item">
-    <a href="{{ site.mygithub }}"><i class="fa fa-github fa-2x"></i></a>
-    <a href="{{ site.mylinkedin }}"><i class="fa fa-linkedin-square fa-2x"></i></a>
-    <a href="mailto:{{ site.author.email }}?"><i class="fa fa-envelope-square fa-2x"></i></a>
+    <div class="contact">
+      <a href="{{ site.mygithub }}"><i class="fa fa-github fa-2x"></i></a>
+      <a href="{{ site.mylinkedin }}"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      <a href="mailto:{{ site.author.email }}?"><i class="fa fa-envelope-square fa-2x"></i></a>
+    </div>
   </div>
 
   <nav class="sidebar-nav">
@@ -36,9 +38,10 @@
     {% endfor %}
   </nav>
 
-  <div class="sidebar-item">
+  <div>
     <p class="copyright">
-      Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.
+      Copyright &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}.<br>
+      All rights reserved.
     </p>
   </div>
 </div>

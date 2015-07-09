@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Create Post Previews and Read More Buttons for Jekyll Blogs
+title: Create Post Previews for Jekyll Blogs
 ---
 
 <!-- links -->
 [poole]: http://getpoole.com
 
 <!-- post -->
-I used a handy Jekyll template called [Poole][poole] when I originally set up my blog. It's great because it creates all the pages you need to get a Jekyll site running, but it also masks the underlying machinery that is Jekyll. For example, Poole, by default, shows the full contents of each post on the main page (the index.html). That means if your post is a lengthy one, the reader might not even notice that there are multiple posts on that same page!
+I used a handy Jekyll template called [Poole][poole] when I originally set up my blog. It's great because it creates all the pages you need to get a Jekyll site running. However, Poole, by default, shows the full contents of each post on the front page. That means if your first post is a lengthy one, the reader might not even notice that there are multiple posts on that same page!
 
 Fortunately, there's a very simple solution to this by defining the `excerpt_separator` property in your config.yml file.
 
@@ -33,7 +33,7 @@ Somewhere in your index.html file, you might have code that looks similar to thi
 ```
 {% endraw %}
 
-As you might know, the {% raw %}`{{ post.content }}`{% endraw %} variable represents the entire post. There is actually another useful variable available in Jekyll called {% raw %}`{{ post.excerpt }}`{% endraw %}, that stores the portion of your post, starting from the beginning of the post to wherever the `excerpt_separator` is encountered in the post (or end of the post if `excerpt_separator` is not in your post).
+As you might know, the {% raw %}`{{ post.content }}`{% endraw %} variable represents the entire post. There is actually a useful variable available in Jekyll called {% raw %}`{{ post.excerpt }}`{% endraw %}, that stores the portion of your post, starting from the beginning of the post to wherever the `excerpt_separator` is found in the post (or if not found, to the end of the post).
 
 I set my `excerpt_separator` property to `<!--excerpt-->` in my config.yml by adding this line:
 
