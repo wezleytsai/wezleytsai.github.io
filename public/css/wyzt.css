@@ -52,6 +52,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Code */
+pre {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
 code,
 pre {
   font-family: 'Roboto Mono', Menlo, "Courier New", monospace;
