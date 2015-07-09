@@ -133,7 +133,7 @@ pre {
 }
 
 .masthead .container {
-  line-height: normal;
+  line-height: 1.0;
 }
 
 .masthead-title {
@@ -272,6 +272,10 @@ pre {
   padding: .8rem 1rem;
   border-top: 1px solid rgb(255,255,255);
   border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.sidebar-item {
+  padding: .8rem 1rem;
 }
 
 /*.sidebar-nav-item:first-child {
