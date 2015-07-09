@@ -125,6 +125,11 @@ pre {
   padding-bottom: 1.5rem;
   margin-bottom: 0;
 }
+
+.masthead .container {
+  line-height: normal;
+}
+
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -132,10 +137,8 @@ pre {
 }
 .masthead-title a {
   color: #ededed;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Geo', sans-serif;
   font-size: 2.15rem;
 }
@@ -215,15 +218,15 @@ pre {
 }
 
 .sidebar-item {
-  /*padding: 1rem;*/
+  display: table;
   position: relative;
   height: 90px;
 }
 
-.sidebar .contact {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%); /* translate based on this items W/H */
+.sidebar-item .container {
+  padding: 0;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .copyright {
