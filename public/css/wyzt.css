@@ -205,27 +205,21 @@ pre {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: -14rem;
-  width: 14rem;
+  left: -16rem;
+  width: 16rem;
   visibility: hidden;
   overflow-y: auto;
   font-size: 1rem;
   color: rgb(255,255,255);
   color: rgba(255,255,255,.6);
   background-color: #373737;
-
-}
-@media (min-width: 30em) {
-  .sidebar {
-    font-size: 1rem; /* 14px */
-  }
-
-  .sidebar-nav {
-    font-size: 1rem;
-  }
 }
 
 /* Sidebar content */
+.sidebar .contact {
+  font-size: 1.10rem;
+}
+
 .sidebar a {
   font-weight: normal;
   color: #fff;
@@ -495,11 +489,19 @@ Sidebar icon animaiton
 .open ~ .masthead,
 .open ~ .sidebar,
 .open ~ .wrap {
-  -webkit-transform: translateX(14rem);
+  /*-webkit-transform: translateX(14rem);
      -moz-transform: translateX(14rem);
       -ms-transform: translateX(14rem);
        -o-transform: translateX(14rem);
-          transform: translateX(14rem);
+          transform: translateX(14rem);*/
+}
+
+.open ~ .sidebar {
+  -webkit-transform: translateX(16rem);
+     -moz-transform: translateX(16rem);
+      -ms-transform: translateX(16rem);
+       -o-transform: translateX(16rem);
+          transform: translateX(16rem);
 }
 
 .open .sidebar-icon {
@@ -511,11 +513,11 @@ Sidebar icon animaiton
 }
 
 .open {
-  -webkit-transform: translateX(9.5rem);
-     -moz-transform: translateX(9.5rem);
-      -ms-transform: translateX(9.5rem);
-       -o-transform: translateX(9.5rem);
-          transform: translateX(9.5rem);
+  -webkit-transform: translateX(11.25rem);
+     -moz-transform: translateX(11.25rem);
+      -ms-transform: translateX(11.25rem);
+       -o-transform: translateX(11.25rem);
+          transform: translateX(11.25rem);
 }
 
 
