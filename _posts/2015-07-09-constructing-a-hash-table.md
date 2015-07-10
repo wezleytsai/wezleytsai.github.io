@@ -27,7 +27,7 @@ console.log(obj['a']); // 1
 
 ## Arrays ##
 
-Assume that such objects are not available for a moment. How else can this information be stored? This same data can be stored in an array, where each element is a another array, or "tuple" - an ordered list where the order has some significance. In this case, index 0 of the tuple represents the key, and index 1 of the tuple represents the value.
+Assume that such objects are not available for a moment (since JavaScript objects are hash tables). How else can this information be stored? This same data can be stored in an array, where each element is a another array, or "tuple" - an ordered list where the order has some significance. In this case, index 0 of the tuple represents the key, and index 1 of the tuple represents the value.
 
 ```javascript
 var arr = [
@@ -60,7 +60,7 @@ This process is no longer trivial. If the array had 10,000 elements, the `for` l
 
 As mentioned before, if the index of the data is known, it can be retrieved at constant time from an array. That is, the amount of time required to retrieve the data is independent of the size of the array. The array could have 10,000 elements, but the computer can access the data at index 8,157 instantly by doing some math. How can this knowledge by applied to create a data structure that is capable of storing key-value pairs with constant time data retrieval?
 
-A hash table does exactly this. Hash tables store data in an internal array, but has an extra feature that converts the keys (strings) into an index using a **hashing function** to decide _where_ to store the data. Using the example above, a hashing function might do the following:
+A hash table does exactly this. Hash tables store data in an internal array, but has an extra feature that _maps_ the keys (strings) to an index using a **hashing function**. Using the example above, a hashing function might do the following:
 
 ```javascript
 hashingFunction('a', 3); // returns 0

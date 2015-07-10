@@ -38,6 +38,8 @@
 html,
 body {
   overflow-x: hidden;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 html {
