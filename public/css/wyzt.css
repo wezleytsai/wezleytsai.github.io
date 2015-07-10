@@ -42,13 +42,18 @@ body {
 
 html {
   font-family: 'Noto Serif', Palatino, serif;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.4em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Noto Serif", Palatino, serif;
   font-weight: 400;
   color: #313131;
+}
+
+.blog-theme {
+  font-family: 'Geo', sans-serif;
 }
 
 /* Code */
@@ -60,9 +65,9 @@ pre {
 
 code,
 pre {
-  font-family: 'Roboto Mono', Menlo, "Courier New", monospace;
-  font-size: 95%;
-  padding: 0.05rem 0.25rem;
+  font-family: 'Inconsolata', Menlo, 'Courier New', monospace;
+  font-size: 100%;
+  padding: 0.05rem 0;
 }
 
 /*
@@ -76,7 +81,7 @@ pre {
 .wrap {
   position: relative;
   width: 100%;
-  top: 60px;
+  top: 48px;
 }
 
 
@@ -90,21 +95,21 @@ pre {
   max-width: 28rem;
 }
 
-@media (min-width: 38em) {
+@media (min-width: 40em) {
   .container {
     max-width: 32rem;
   }
 }
 
-@media (min-width: 56em) {
+@media (min-width: 60em) {
   .container {
-    max-width: 42rem;
+    max-width: 48rem;
   }
 }
 
-@media (min-width: 74em) {
+@media (min-width: 80em) {
   .container {
-    max-width: 56rem;
+    max-width: 64rem;
   }
 }
 
@@ -123,7 +128,7 @@ pre {
 .masthead {
   position: fixed;
   top: 0;
-  height: 90px;
+  height: 78px;
   width: 100%;
   z-index: 5;
   background-color: #217290;
@@ -133,7 +138,7 @@ pre {
 }
 
 .masthead .container {
-  line-height: 1.0;
+  padding-top: 4px;
 }
 
 .masthead-title {
@@ -141,7 +146,7 @@ pre {
   margin-bottom: 0;
   color: #ededed;
 }
-.masthead-title a {
+.masthead-title .blog-theme {
   color: #ededed;
   margin-left: auto;
   margin-right: auto;
@@ -149,7 +154,8 @@ pre {
   font-size: 2.15rem;
 }
 
-.masthead-title a:hover {
+.masthead-title a:hover,
+.masthead-title a:enabled {
   text-decoration: none;
 }
 
@@ -209,7 +215,11 @@ pre {
 }
 @media (min-width: 30em) {
   .sidebar {
-    font-size: 0.875rem; /* 14px */
+    font-size: 1rem; /* 14px */
+  }
+
+  .sidebar-nav {
+    font-size: 1rem;
   }
 }
 
@@ -226,7 +236,7 @@ pre {
 .sidebar-item {
   display: table;
   position: relative;
-  height: 90px;
+  height: 78px;
 }
 
 .sidebar-item .container {
@@ -321,7 +331,7 @@ a.sidebar-nav-item:focus {
 /* Style the sidebar icon */
 .sidebar-container {
   position:fixed;
-  top: 25px;
+  top: 19px;
   left: 1rem;
   z-index: 15;
 
@@ -499,11 +509,11 @@ Sidebar icon animaiton
 }
 
 .open {
-  -webkit-transform: translateX(10rem);
-     -moz-transform: translateX(10rem);
-      -ms-transform: translateX(10rem);
-       -o-transform: translateX(10rem);
-          transform: translateX(10rem);
+  -webkit-transform: translateX(9.5rem);
+     -moz-transform: translateX(9.5rem);
+      -ms-transform: translateX(9.5rem);
+       -o-transform: translateX(9.5rem);
+          transform: translateX(9.5rem);
 }
 
 
