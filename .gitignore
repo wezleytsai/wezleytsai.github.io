@@ -81,6 +81,7 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+_deleted
 
 # Not ready for blog
 portfolio.md
