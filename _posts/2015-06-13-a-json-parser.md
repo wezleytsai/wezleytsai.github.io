@@ -383,3 +383,18 @@ The documentation for `JSON.parse` on [MDN] [mdn-json-parse] shows that there's 
 - For more on Recursive Descent Parsers, check out these links:
   - [Recursive Descent Parser Tutorial] [progzoo-rdp-tutorial]
   - [JSON Parser Example] [oreilly-json-parser]
+
+<!-- script -->
+<script>
+  $(function() {
+
+    // 1st blog post - scroll up
+    $('#go-to-solution').click(function(e) {
+      e.preventDefault(); // prevent default behavior - "jump" to anchor
+      $('html, body').animate({
+        scrollTop: $('#solution').offset().top
+      }, 750);
+    });
+
+  });
+</script>

@@ -17,7 +17,7 @@ title: Home
 
     {{ post.excerpt }}
     {% if post.content contains site.excerpt_separator %}
-      <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+      <a class="read-more" href="{{ site.baseurl }}{{ post.url }}">Read More</a>
     {% endif %}
   </div>
   {% endfor %}
@@ -29,6 +29,9 @@ title: Home
   {% else %}
     <span class="pagination-item older">Older</span>
   {% endif %}
+
+  <a class="pagination-item home" href="{{ site.baseurl }}/">Home</a>
+
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
       <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>

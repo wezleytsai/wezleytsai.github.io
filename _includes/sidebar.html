@@ -12,15 +12,24 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
 
+
   <div class="sidebar-item">
     <div class="container">
-      <div class="contact">
-        <a href="{{ site.mygithub }}"><i class="fa fa-github-square fa-2x"></i></a>
-        <a href="{{ site.mylinkedin }}"><i class="fa fa-linkedin-square fa-2x"></i></a>
-        <a href="mailto:{{ site.author.email }}?"><i class="fa fa-envelope-square fa-2x"></i></a>
+      <!-- space -->
+    </div>
+  </div>
+
+<!--
+  <div class="sidebar-item about-me">
+    <div class="container photo">
+      <img src="https://avatars1.githubusercontent.com/u/10968717?v=3&s=460">
+      <div class="description">
+        Wesley Tsai<br/>
+        Software Engineer
       </div>
     </div>
   </div>
+-->
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">Blog</a>
@@ -49,3 +58,20 @@
   </div>
   -->
 </div>
+
+<script>
+  $(function() {
+    $(document).click(function(e) {
+      var $target = $(e.target);
+      var $sidebarButton = $('.sidebar-container');
+      var $sidebar = $('.sidebar');
+      if($target.closest('.sidebar-container').length) {
+        // if sidebar button clicked => toggle
+        $sidebarButton.toggleClass('open');
+      } else if(!$target.closest('.sidebar').length) {
+        // if anywhere other than sidebar or sidebar button => close sidebar
+        $sidebarButton.removeClass('open');
+      }
+    });
+  });
+</script>
