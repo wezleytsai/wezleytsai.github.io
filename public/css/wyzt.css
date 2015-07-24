@@ -867,7 +867,7 @@ Sidebar icon animaiton
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
   display: block;
-  padding: 1rem 1rem;
+  padding: 2%;
   border: 1px solid #eee;
   border-right: none;
   float: left;
