@@ -119,6 +119,7 @@ abbr[title] {
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
+  cursor: pointer;
   color: rgb(218, 68, 48);
   text-decoration: none;
 }
@@ -348,16 +349,30 @@ tbody tr:nth-child(odd) th {
   float: right;
   position: relative;
   top: -26px;
-  right: 1rem;
+  right: 12px;
 }
 
 .masthead .contact a {
-  margin: 0 0.6rem;
+  margin: 0 12px;
 }
 
-@media (max-width: 48em) {
-  .masthead-title {
-    text-align: center;
+@media (max-width: 500px) {
+  .masthead .contact {
+    right: 6px;
+  }
+
+  .masthead .contact a {
+    margin: 4px;
+  }
+}
+
+@media (max-width: 320px) {
+  .masthead .contact {
+    right: 4px;
+  }
+
+  .masthead .contact a {
+    margin: 2px;
   }
 }
 
@@ -371,10 +386,12 @@ tbody tr:nth-child(odd) th {
   text-decoration: none;
 }
 
-.read-more {
+.read-more,
+.read-more:focus {
   display: inline-block;
 
   font-size: 90%;
+  text-decoration: none;
 
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
@@ -411,9 +428,6 @@ tbody tr:nth-child(odd) th {
           transition: none;
 }
 
-.read-more:focus {
-  text-decoration: none;
-}
 
 .copyright {
   width: 30%;
@@ -422,6 +436,12 @@ tbody tr:nth-child(odd) th {
   padding: 1.25rem;
   text-align: center;
   font-size: 0.8rem;
+}
+
+@media (max-width: 48em) {
+  .copyright {
+    width: 80%;
+  }
 }
 
 
@@ -461,10 +481,6 @@ tbody tr:nth-child(odd) th {
 }
 
 /* Sidebar content */
-.sidebar .contact {
-  font-size: 1.10rem;
-}
-
 .sidebar a {
   font-weight: normal;
   color: #fff;
@@ -851,11 +867,12 @@ Sidebar icon animaiton
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
   display: block;
-  padding: 1.2rem 1rem;
+  padding: 1rem 1rem;
   border: 1px solid #eee;
   border-right: none;
   float: left;
 }
+
 .pagination-item:first-child {
   margin-bottom: -1px;
 }
