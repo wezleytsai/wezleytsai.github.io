@@ -228,38 +228,21 @@ zeni.growl(); // logs 'squirrrrrrtttlleeeeee!!!'
 Inheritance under this pattern is also possible.
 
 ```javascript
-var pokemonMethods = {
-  growl: function() {
-    console.log( this.name + '! ' + this.name + '!');
-  }
-  fight: function() {
-    console.log( this.name + ' used tackle!');
-  }
-}
-
-var makePokemon = function(name, level, type) {
-  var pokemon = Object.create(pokemonMethods); // *
-  pokemon.name = name;
-  pokemon.level = level;
-  pokemon.type = type;
-  // pokemon.growl = pokemonMethods.growl; // *
-  return pokemon;
-}
-
-var squirtleMethods = Object.create(pokemonMethods);
+var squirtleMethods = Object.create(pokemonMethods); // *
 squirtleMethods.fight = function() {
   console.log( this.name + ' used Water Gun!');
 }
 
-var makeSquirtle = function(level) {
+var makeSquirtle = function(level, color) {
   var squirtle = Object.create(squirtleMethods);
   squirtle.name = 'squirtle';
   squirtle.level = level;
   squirtle.type = 'water'
+  squirtle.color = color; // new property for squirtle class
   return squirtle;
 }
 
-var zeni = makeSquirtle(15);
+var zeni = makeSquirtle(15, 'blue');
 
 zeni.growl(); // logs 'squirtle! squirtle!'
 zeni.fight(); // logs 'squirtle used Water Gun!'
@@ -269,7 +252,7 @@ Note that `growl` is not a method available on `squirtleMethods`, but since `squ
 
 <h2 id="pseudoclassical">Pseudoclassical</h2>
 
-The pseudoclassical pattern is the patternt that most resembles the classic class instantiation pattern of other langauges such as Java and C++. Here the function `Pokemon` is capitalized by convention to indicate that it is a **constructor** (the capitalization does nothing special besides indicate to readers that this is a constructor). Constructor functions need to be instantiated by using the `new` keyword.
+The pseudoclassical pattern is the pattern that most resembles the classic object instantiation pattern of other langauges such as Java and C++. Here the function `Pokemon` is capitalized by convention to indicate that it is a **constructor** (the capitalization does nothing special besides indicate to readers that this is a constructor). Constructor functions need to be instantiated by using the `new` keyword.
 
 The `new` keyword has the effect of letting `this` within the constructor function inherit from the prototype. The prototype in this case is `Pokemon.prototype` instead of a `pokemonMethods`. `Pokemon.prototype` is nothing more than an an object defined as a property of the constructor function (recall that functions are objects themselves, and can have arbitrary properties defined on them). For convenience, the `prototype` property is defined for you by JavaScript and is automatically the prototype of all instances created by the constructor.
 
@@ -292,8 +275,9 @@ Pokemon.prototype.fight = function() {
 The pseudoclassical pattern really shines when it comes to inheritance. Here is an example of subclassing the `Pokemon` class to a `Squirtle` class.
 
 ```javascript
-var Squirtle = function(level) {
+var Squirtle = function(level, color) {
   Pokemon.call(this, 'squirtle', level, 'water'); // *
+  this.color = color;
 }
 
 Squirtle.prototype = Object.create(Pokemon.prototype); // *
@@ -303,7 +287,7 @@ Squirtle.prototype.fight = function() {
   console.log( this.name + ' used Water Gun!');
 }
 
-var zeni = new Squirtle(15);
+var zeni = new Squirtle(15, 'blue');
 
 zeni.growl(); // logs 'squirtle! squirtle!'
 zeni.fight(); // logs 'squirtle used Water Gun!'
