@@ -155,9 +155,9 @@ pre code {
 
 code {
   border-radius: 3px;
-  padding: 0.10rem 0.25rem;
-  background-color: #F0EDEE;
-  color: #2C666E;
+  padding: 0.15rem 0.35rem;
+  background-color: #eaedf2;
+  color: #383838;
 }
 
 /* Pygments via Jekyll */

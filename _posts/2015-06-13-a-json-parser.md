@@ -393,7 +393,7 @@ The documentation for `JSON.parse` on [MDN] [mdn-json-parse] shows that there's 
       e.preventDefault(); // prevent default behavior - "jump" to anchor
       $('html, body').animate({
         scrollTop: $('#solution').offset().top
-      }, 750);
+      }, 'slow');
     });
 
   });
