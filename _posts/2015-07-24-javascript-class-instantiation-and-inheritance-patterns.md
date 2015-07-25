@@ -349,8 +349,9 @@ Even though the pseudoclassical pattern is the most powerful and is often optimi
 
 - **Functional**
   + Most transparent and easy to understand
+  + Higher memory cost because each instance retains its own properties
 - Functional shared
-  + Offers minor space cost advantage over functional
+  + Offers memory cost advantage over functional
   + Adds a little complexity over functional
 - Prototypal
   + Not much easier to comprehend compared to the pseudoclassical pattern
