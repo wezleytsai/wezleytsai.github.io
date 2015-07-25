@@ -1,4 +1,4 @@
 ---
 layout: post
-title: Node Express Server Introduction
+title: Simple Node Express Server & MySQL Database
 ---

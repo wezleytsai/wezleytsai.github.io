@@ -332,18 +332,20 @@ Squirtle.prototype.constructor = Squirtle;
 zeni.constructor === Squirtle; // true
 ```
 
-The pseudoclassical instantiation pattern is usually the most popular. However, it requires a thorough understanding of the pseudoclassical instantiation pattern. Furthermore, before ES5 introduced `Object.create` there were several other conventions used to substitute this LOC:
+The pseudoclassical instantiation pattern is usually the most popular. However, it requires a thorough understanding of the pseudoclassical instantiation pattern. Furthermore, before ES5 introduced `Object.create` there were several other conventions used to substitute this LOC, such as setting it equal to a new instance of Pokemon.
 
 ```javascript
 Squirtle.prototype = Object.create(Pokemon.prototype); // correct
 Squirtle.prototype = new Pokemon; // used to be common practice, not correct
 ```
 
-such as setting it equal to a new instance of Pokemon. Failed method lookups will fall through to the instance of Pokemon, and then to the prototype of Pokemon, as desired. However, this created problems if the `Pokemon` constructor required a lot of initialization parameters and could not accept undefined ones. Know that `Object.create` is the only correct pattern to use, but there might still be established code bases out there with the old pattern. In fact, I often see blog posts and websits reference the old pattern as the proper way to set up inheritance. Even though the pseudoclassical pattern is the most powerful and is often optimized by many runtime engines, it may sometimes be benefiicial to go with a functional pattern for simplicity and transparency.
+Failed method lookups will fall through to the instance of Pokemon, and then to the prototype of Pokemon, as desired. However, this created problems if the `Pokemon` constructor required a lot of initialization parameters and could not accept undefined ones.
+
+Know that `Object.create` is the only correct pattern to use, but there might still be established code bases out there with the old pattern. In fact, I often see blog posts and websites reference the old pattern as the proper way to set up inheritance in JS.
 
 <h2 id="summary">Summary</h2>
 
-In my personal humble opinion, the **functional** and **pseudoclassical** patterns provide the best value. Here's a summary:
+Even though the pseudoclassical pattern is the most powerful and is often optimized by many runtime engines, it may sometimes be benefiicial to go with a functional pattern for simplicity and transparency. It all depends on the intended usage. In my personal opinion, the **functional** and **pseudoclassical** patterns provide the best value. Here's a summary:
 
 - **Functional**
   + Most transparent and easy to understand
