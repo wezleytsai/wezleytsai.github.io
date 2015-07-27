@@ -142,11 +142,10 @@ pre {
 
 pre,
 pre code {
-  border-radius: 4px;
-  background-color: #1d1f21;
+  border-radius: 2px;
+  background-color: #2d2d2d;
   color: #c5c8c6;
   display: block;
-  padding: 0.5rem;
   line-height: 1.4;
   overflow: auto;
   word-wrap: normal;

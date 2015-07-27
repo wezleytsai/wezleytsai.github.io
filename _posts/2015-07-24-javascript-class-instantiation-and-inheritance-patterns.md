@@ -3,6 +3,7 @@ layout: post
 title: JavaScript Class Instantiation & Inheritance Patterns
 ---
 
+<!-- links -->
 [underscore-extend]: http://underscorejs.org/#extend
 
 <!-- post -->
