@@ -16,7 +16,7 @@ The slow-by-design processing time is a strength of the bcrypt hashing algorithm
 
 ## Problem ##
 
-Here is a `User` model representing data to be stored in a users table. I have a listener for the `"creating"` event, which is triggered before the model is being inserted. The event handler is intended to hash the password so the user's password is never directly saved into the database.
+Here is a `User` model representing data to be stored in some users table. I have a listener for the `"creating"` event, which is triggered before the model is being inserted. The event handler is intended to hash the password so the user's password is never directly saved into the database.
 
 ```javascript
 var bcrypt = require('bcrypt');
