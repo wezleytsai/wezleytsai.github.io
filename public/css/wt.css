@@ -486,8 +486,8 @@ a.sidebar-nav-item:focus {
   top: 19px;
   left: 1rem;
   z-index: 15;
-  -webkit-transition: translate 0.1s eas-in-out;
-          transition: translate 0.1s eas-in-out;
+  -webkit-transition: translate 0.1s ease-in-out;
+          transition: translate 0.1s ease-in-out;
 }
 .sidebar-icon {
   display: block;
@@ -513,6 +513,9 @@ a.sidebar-nav-item:focus {
   border-radius: 0;
   background: #ffffff;
   opacity: 1;
+  -webkit-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
+      -ms-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
+          transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
   -webkit-transition: background-color 0.1s ease-in-out, top 0.15s ease-in-out 0.15s, opacity 0.05s ease-in-out 0.15s, -webkit-transform 0.15s ease-in-out;
           transition: background-color 0.1s ease-in-out, top 0.15s ease-in-out 0.15s, opacity 0.05s ease-in-out 0.15s, transform 0.15s ease-in-out;
 }

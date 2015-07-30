@@ -82,7 +82,7 @@ a.sidebar-nav-item:focus {
   left: @sidebar-icon-left;
   z-index: 15;
 
-  transition: translate .1s eas-in-out;
+  transition: translate .1s ease-in-out;
 }
 
 .sidebar-icon {
@@ -108,6 +108,7 @@ a.sidebar-nav-item:focus {
     background: @sidebar-icon-bar-color-normal;
     opacity: 1;
 
+    transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
     transition: background-color .1s ease-in-out,
                 top @animation-speed ease-in-out @animation-speed,
                 opacity .05s ease-in-out @animation-speed,
