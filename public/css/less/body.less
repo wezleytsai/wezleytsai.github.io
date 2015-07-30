@@ -35,7 +35,7 @@
   font-size: 90%;
   text-decoration: none;
 
-  .box-sizing(content-box);
+  box-sizing: content-box;
 
   padding: 6px 10px;
   margin: 0 auto;
@@ -45,18 +45,9 @@
   border-radius: 4px;
   text-align: center;
 
-  -webkit-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
-     -moz-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
-       -o-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
-          transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+  transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+              color 0.15s cubic-bezier(0, 0, 0, 0),
+              border-color 0.15s cubic-bezier(0, 0, 0, 0);
 }
 
 .read-more {
@@ -69,7 +60,7 @@
     border-color: @link-active-color;
     background-color: @link-active-color;
     text-decoration: none;
-    .transition(none);
+    transition: none;
   }
 }
 
@@ -109,18 +100,9 @@
 a.pagination-item {
   color: black;
 
-  -webkit-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
-     -moz-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
-       -o-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
-          transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
-                      color 0.15s cubic-bezier(0, 0, 0, 0),
-                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+  transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+              color 0.15s cubic-bezier(0, 0, 0, 0),
+              border-color 0.15s cubic-bezier(0, 0, 0, 0);
 
   &:hover {
     border-color: @pagination-button-hover-color;
@@ -129,7 +111,7 @@ a.pagination-item {
     text-decoration: none;
   }
   &:active {
-    .transition(none);
+    transition: none;
   }
 }
 

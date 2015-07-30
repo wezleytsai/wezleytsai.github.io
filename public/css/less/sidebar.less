@@ -1,8 +1,5 @@
 .sidebar {
-  -webkit-transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
-     -moz-transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
-       -o-transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
-          transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
+  transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
 
   position: fixed;
   top: 0;
@@ -85,7 +82,7 @@ a.sidebar-nav-item:focus {
   left: @sidebar-icon-left;
   z-index: 15;
 
-  .transition(translate .1s eas-in-out);
+  transition: translate .1s eas-in-out;
 }
 
 .sidebar-icon {
@@ -96,7 +93,7 @@ a.sidebar-nav-item:focus {
   background-color: @sidebar-icon-color-normal;
   border-radius: 5%;
   cursor: pointer;
-  .transition(background-color .1s ease-in-out);
+  transition: background-color .1s ease-in-out;
   active {
     position: relative;
     top: 1.5px;
@@ -110,24 +107,11 @@ a.sidebar-nav-item:focus {
     border-radius: 0;
     background: @sidebar-icon-bar-color-normal;
     opacity: 1;
-    .transform(translate(-50%, 0) rotate(0deg) scale(1, 1));
-    -webkit-transition: background-color .1s ease-in-out,
-                        top @animation-speed ease-in-out @animation-speed,
-                        opacity .05s ease-in-out @animation-speed,
-                        -webkit-transform @animation-speed ease-in-out;
-       -moz-transition: background-color .1s ease-in-out,
-                        top @animation-speed ease-in-out @animation-speed,
-                        opacity .05s ease-in-out @animation-speed,
-                        -moz-transform @animation-speed ease-in-out;
-         -o-transition: background-color .1s ease-in-out,
-                        top @animation-speed ease-in-out @animation-speed,
-                        opacity .05s ease-in-out @animation-speed,
-                        -ms-transform @animation-speed ease-in-out;
-            transition: background-color .1s ease-in-out,
-                        top @animation-speed ease-in-out @animation-speed,
-                        opacity .05s ease-in-out @animation-speed,
-                        transform @animation-speed ease-in-out;
 
+    transition: background-color .1s ease-in-out,
+                top @animation-speed ease-in-out @animation-speed,
+                opacity .05s ease-in-out @animation-speed,
+                transform @animation-speed ease-in-out;
   }
 }
 
@@ -147,28 +131,20 @@ a.sidebar-nav-item:focus {
 .open {
   .sidebar-icon {
     span {
-      -webkit-transition: top @animation-speed ease-in-out,
-                          opacity 0s ease-in-out @animation-speed,
-                          -webkit-transform @animation-speed ease-in-out @animation-speed;
-         -moz-transition: top @animation-speed ease-in-out,
-                          opacity 0s ease-in-out @animation-speed,
-                          -moz-transform @animation-speed ease-in-out @animation-speed;
-           -o-transition: top @animation-speed ease-in-out,
-                          opacity 0s ease-in-out @animation-speed,
-                          -ms-transform @animation-speed ease-in-out @animation-speed;
-              transition: top @animation-speed ease-in-out,
-                          opacity 0s ease-in-out @animation-speed,
-                          transform @animation-speed ease-in-out @animation-speed;
+      transition: top @animation-speed ease-in-out,
+                  opacity 0s ease-in-out @animation-speed,
+                  transform @animation-speed ease-in-out @animation-speed;
+
       &:nth-child(1),
       &:nth-child(4) {
         top: @sidebar-icon-size/2 - @sidebar-icon-bar-height/2;
         opacity: 0;
       }
       &:nth-child(2) {
-        .transform(translate(-50%, 0) rotate(45deg) scale(1.25, 1.25));
+        transform: translate(-50%, 0) rotate(45deg) scale(1.25, 1.25);
       }
       &:nth-child(3) {
-        .transform(translate(-50%, 0) rotate(-45deg) scale(1.25, 1.25));
+        transform: translate(-50%, 0) rotate(-45deg) scale(1.25, 1.25);
       }
     }
   }
@@ -183,19 +159,13 @@ a.sidebar-nav-item:focus {
 .sidebar-icon,
 .sidebar-icon span
 {
-  -webkit-backface-visibility: hidden;
-     -moz-backface-visibility: hidden;
-      -ms-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .masthead,
 .wrap,
 .sidebar-container {
-  -webkit-transition: -webkit-transform @animation-speed * 1.5 ease-in-out;
-     -moz-transition:    -moz-transform @animation-speed * 1.5 ease-in-out;
-       -o-transition:      -o-transform @animation-speed * 1.5 ease-in-out;
-          transition:         transform @animation-speed * 1.5 ease-in-out;
+  transition:         transform @animation-speed * 1.5 ease-in-out;
 }
 
 .open + .sidebar {
@@ -204,11 +174,11 @@ a.sidebar-nav-item:focus {
 }
 
 .open ~ .sidebar {
-  .transform(translateX(@sidebar-width));
+  transform: translateX(@sidebar-width);
 }
 
 .open {
-  .transform(translateX(0.7 * @sidebar-width));
+  transform: translateX(0.7 * @sidebar-width);
   .sidebar-icon {
     background-color: @sidebar-icon-color-active;
     span {
