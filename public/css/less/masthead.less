@@ -1,0 +1,54 @@
+// Logo
+.masthead {
+  position: fixed;
+  height: @masthead-height;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: @masthead-background-color;
+  margin-bottom: 0;
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom:  3rem;
+  .container {
+    position: relative;
+    top: @logo-offset-y;
+  }
+  .contact {
+    float: right;
+    position: relative;
+    top: @contact-offset-y;
+    right: @contact-offset-x;
+    a {
+      margin: 0 12px;
+    }
+    @media(max-width: 500px) {
+      right: 6px;
+      a {
+        margin: 4px;
+      }
+    }
+    @media(max-width: 320px) {
+      right: 4px;
+      a {
+        margin: 2px;
+      }
+    }
+  }
+}
+
+.masthead-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  .blog-theme {
+    color: @logo-color;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Geo', sans-serif;
+    font-size: 2.15rem;
+  }
+  a:hover, a:enabled {
+    text-decoration: none;
+  }
+}
+

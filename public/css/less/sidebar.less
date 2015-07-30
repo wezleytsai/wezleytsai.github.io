@@ -1,0 +1,218 @@
+.sidebar {
+  -webkit-transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
+     -moz-transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
+       -o-transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
+          transition: all @animation-speed * 1.5 ease-in-out, left @animation-speed * 1.5 ease-in-out;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -@sidebar-width;
+  width: @sidebar-width;
+  visibility: hidden;
+  overflow-y: auto;
+  font-size: 1rem;
+  color: @sidebar-color;
+  background-color: @sidebar-background-color;
+  a {
+    font-weight: normal;
+    color: #fff;
+    &:hover {
+      color: @sidebar-link-hover-color;
+    }
+  }
+}
+
+.sidebar-item {
+  width: 100%;
+  display: table;
+  position: relative;
+  height: @masthead-height;
+  .container {
+    padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  a {
+    margin-right: 0.75rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.photo {
+  img {
+    border-radius: 50%;
+    width: 60%;
+    margin: 1rem auto;
+  }
+}
+
+.about-me {
+  text-align: center;
+  .description {
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Navigation
+.sidebar-nav {
+  border-bottom: 1px solid @sidebar-nav-border-color;
+}
+
+.sidebar-nav-item {
+  display: block;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid @sidebar-nav-border-color;
+}
+
+.sidebar-nav-item .active,
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: none;
+  background-color: @sidebar-nav-item-active;
+  border-color: transparent;
+}
+
+// Animation
+.sidebar-container {
+  position: fixed;
+  top: @sidebar-icon-top;
+  left: @sidebar-icon-left;
+  z-index: 15;
+
+  .transition(translate .1s eas-in-out);
+}
+
+.sidebar-icon {
+  display: block;
+  text-align: center;
+  width: @sidebar-icon-size;
+  height: @sidebar-icon-size;
+  background-color: @sidebar-icon-color-normal;
+  border-radius: 5%;
+  cursor: pointer;
+  .transition(background-color .1s ease-in-out);
+  active {
+    position: relative;
+    top: 1.5px;
+  }
+  span {
+    display: inline-block;
+    pointer-events: none;
+    position: absolute;
+    height: @sidebar-icon-bar-height;
+    width: @sidebar-icon-bar-width;
+    border-radius: 0;
+    background: @sidebar-icon-bar-color-normal;
+    opacity: 1;
+    .transform(translate(-50%, 0) rotate(0deg) scale(1, 1));
+    -webkit-transition: background-color .1s ease-in-out,
+                        top @animation-speed ease-in-out @animation-speed,
+                        opacity .05s ease-in-out @animation-speed,
+                        -webkit-transform @animation-speed ease-in-out;
+       -moz-transition: background-color .1s ease-in-out,
+                        top @animation-speed ease-in-out @animation-speed,
+                        opacity .05s ease-in-out @animation-speed,
+                        -moz-transform @animation-speed ease-in-out;
+         -o-transition: background-color .1s ease-in-out,
+                        top @animation-speed ease-in-out @animation-speed,
+                        opacity .05s ease-in-out @animation-speed,
+                        -ms-transform @animation-speed ease-in-out;
+            transition: background-color .1s ease-in-out,
+                        top @animation-speed ease-in-out @animation-speed,
+                        opacity .05s ease-in-out @animation-speed,
+                        transform @animation-speed ease-in-out;
+
+  }
+}
+
+.sidebar-icon {
+  span:nth-child(1) {
+    top: @sidebar-icon-size/2 - @sidebar-icon-bar-height/2 - 0.225 * @sidebar-icon-size;
+  }
+  span:nth-child(2),
+  span:nth-child(3) {
+    top: @sidebar-icon-size/2 - @sidebar-icon-bar-height/2;
+  }
+  span:nth-child(4) {
+    top: @sidebar-icon-size/2 - @sidebar-icon-bar-height/2 + 0.225 * @sidebar-icon-size;
+  }
+}
+
+.open {
+  .sidebar-icon {
+    span {
+      -webkit-transition: top @animation-speed ease-in-out,
+                          opacity 0s ease-in-out @animation-speed,
+                          -webkit-transform @animation-speed ease-in-out @animation-speed;
+         -moz-transition: top @animation-speed ease-in-out,
+                          opacity 0s ease-in-out @animation-speed,
+                          -moz-transform @animation-speed ease-in-out @animation-speed;
+           -o-transition: top @animation-speed ease-in-out,
+                          opacity 0s ease-in-out @animation-speed,
+                          -ms-transform @animation-speed ease-in-out @animation-speed;
+              transition: top @animation-speed ease-in-out,
+                          opacity 0s ease-in-out @animation-speed,
+                          transform @animation-speed ease-in-out @animation-speed;
+      &:nth-child(1),
+      &:nth-child(4) {
+        top: @sidebar-icon-size/2 - @sidebar-icon-bar-height/2;
+        opacity: 0;
+      }
+      &:nth-child(2) {
+        .transform(translate(-50%, 0) rotate(45deg) scale(1.25, 1.25));
+      }
+      &:nth-child(3) {
+        .transform(translate(-50%, 0) rotate(-45deg) scale(1.25, 1.25));
+      }
+    }
+  }
+}
+
+// Wrap animation
+
+.masthead,
+.wrap,
+.sidebar,
+.sidebar-container,
+.sidebar-icon,
+.sidebar-icon span
+{
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.masthead,
+.wrap,
+.sidebar-container {
+  -webkit-transition: -webkit-transform @animation-speed * 1.5 ease-in-out;
+     -moz-transition:    -moz-transform @animation-speed * 1.5 ease-in-out;
+       -o-transition:      -o-transform @animation-speed * 1.5 ease-in-out;
+          transition:         transform @animation-speed * 1.5 ease-in-out;
+}
+
+.open + .sidebar {
+  z-index: 10;
+  visibility: visible;
+}
+
+.open ~ .sidebar {
+  .transform(translateX(@sidebar-width));
+}
+
+.open {
+  .transform(translateX(0.7 * @sidebar-width));
+  .sidebar-icon {
+    background-color: @sidebar-icon-color-active;
+    span {
+      background-color: @sidebar-icon-bar-color-active;
+    }
+  }
+}

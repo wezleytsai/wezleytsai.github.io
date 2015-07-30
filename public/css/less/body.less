@@ -1,0 +1,147 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  top: @wrap-offset-y;
+}
+
+.container {
+  max-width: 25rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  margin-left:  auto;
+  margin-right: auto;
+  @media (min-width: 40em) {
+    max-width: 30rem;
+  }
+  @media (min-width: 60em) {
+    max-width: 45rem;
+  }
+  @media (min-width: 80em) {
+    max-width: 60rem;
+  }
+
+}
+
+// Posts
+.post-title a:hover {
+  color: @post-title-hover-color;
+  text-decoration: none;
+}
+
+.read-more,
+.read-more:focus {
+  display: inline-block;
+
+  font-size: 90%;
+  text-decoration: none;
+
+  .box-sizing(content-box);
+
+  padding: 6px 10px;
+  margin: 0 auto;
+  border: 1px solid @link-color;
+  color: @link-color;
+
+  border-radius: 4px;
+  text-align: center;
+
+  -webkit-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+     -moz-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+       -o-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+          transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+}
+
+.read-more {
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: @link-color;
+  }
+  &:active {
+    border-color: @link-active-color;
+    background-color: @link-active-color;
+    text-decoration: none;
+    .transition(none);
+  }
+}
+
+// Pagination
+.pagination {
+  overflow: hidden; /* clearfix */
+  margin: 4rem 0;
+  color: #ccc;
+  text-align: center;
+  .newer,
+  .older {
+    width: 30%;
+  }
+  .home {
+    width: 40%;
+  }
+}
+
+.pagination-item {
+  display: block;
+  padding: 2%;
+  border: 1px solid @pagination-button-border;
+  border-right: none;
+  float: left;
+  &:first-child {
+    margin-bottom: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  &:last-child {
+    border-right: 1px solid @pagination-button-border;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+a.pagination-item {
+  color: black;
+
+  -webkit-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+     -moz-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+       -o-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+          transition: background-color 0.15s cubic-bezier(0, 0, 0, 0),
+                      color 0.15s cubic-bezier(0, 0, 0, 0),
+                      border-color 0.15s cubic-bezier(0, 0, 0, 0);
+
+  &:hover {
+    border-color: @pagination-button-hover-color;
+    background-color: @pagination-button-hover-color;
+    color: white;
+    text-decoration: none;
+  }
+  &:active {
+    .transition(none);
+  }
+}
+
+// Copyright
+.copyright {
+  width: 30%;
+  border-top: 1px solid @light-border-color;
+  margin: 5rem auto;
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.8rem;
+  @media(max-width: 48rem) {
+    width: 80%;
+  }
+}
