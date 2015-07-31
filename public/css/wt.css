@@ -423,8 +423,8 @@ a.pagination-item:active {
   color: inherit;
 }
 .sidebar {
-  -webkit-transition: all 0.45s ease-in-out, left 0.45s ease-in-out;
-          transition: all 0.45s ease-in-out, left 0.45s ease-in-out;
+  -webkit-transition: all 0.375s ease-in-out, left 0.375s ease-in-out;
+          transition: all 0.375s ease-in-out, left 0.375s ease-in-out;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -495,8 +495,8 @@ a.sidebar-nav-item:focus {
   top: 26px;
   left: 1rem;
   z-index: 15;
-  -webkit-transition: translate 0.3s ease-in-out;
-          transition: translate 0.3s ease-in-out;
+  -webkit-transition: translate 0.25s ease-in-out;
+          transition: translate 0.25s ease-in-out;
 }
 .sidebar-icon {
   display: block;
@@ -506,8 +506,8 @@ a.sidebar-nav-item:focus {
   background-color: rgba(255, 255, 255, 0);
   border-radius: 5%;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+          transition: background-color 0.25s ease-in-out;
 }
 .sidebar-icon active {
   position: relative;
@@ -525,8 +525,8 @@ a.sidebar-nav-item:focus {
   -webkit-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
       -ms-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
           transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
-  -webkit-transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out;
-          transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s, transform 0.3s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out, top 0.25s ease-in-out 0.25s, opacity 0.25s ease-in-out 0.25s, -webkit-transform 0.25s ease-in-out;
+          transition: background-color 0.25s ease-in-out, top 0.25s ease-in-out 0.25s, opacity 0.25s ease-in-out 0.25s, transform 0.25s ease-in-out;
 }
 .sidebar-icon span:nth-child(1) {
   top: 0.59375rem;
@@ -548,8 +548,8 @@ a.sidebar-nav-item:focus {
 }
 .open .sidebar-icon span {
   background-color: #29c6a4;
-  -webkit-transition: top 0.3s ease-in-out, opacity 0s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
-          transition: top 0.3s ease-in-out, opacity 0s ease-in-out 0.3s, transform 0.3s ease-in-out 0.3s;
+  -webkit-transition: top 0.25s ease-in-out, opacity 0s ease-in-out 0.25s, -webkit-transform 0.25s ease-in-out 0.25s;
+          transition: top 0.25s ease-in-out, opacity 0s ease-in-out 0.25s, transform 0.25s ease-in-out 0.25s;
 }
 .open .sidebar-icon span:nth-child(1),
 .open .sidebar-icon span:nth-child(4) {
@@ -578,8 +578,8 @@ a.sidebar-nav-item:focus {
 .masthead,
 .wrap,
 .sidebar-icon-container {
-  -webkit-transition: -webkit-transform 0.45s ease-in-out;
-          transition: transform 0.45s ease-in-out;
+  -webkit-transition: -webkit-transform 0.375s ease-in-out;
+          transition: transform 0.375s ease-in-out;
 }
 .open + .sidebar {
   visibility: visible;
