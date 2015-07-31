@@ -5,8 +5,8 @@
   top: 0;
   width: 100%;
   z-index: 5;
-  background-color: @masthead-background-color;
-  background: linear-gradient(to right, @masthead-background-color-grad, @masthead-background-color);
+  background-color: @masthead-background-color-dark;
+  background: linear-gradient(to right, @masthead-background-color-beg, @masthead-background-color-end);
   margin-bottom: 0;
   padding-top:    @masthead-height/2 - 22;
   padding-bottom: 1rem;
@@ -21,7 +21,11 @@
     top: @contact-offset-y;
     right: @contact-offset-x;
     a {
+      color: @contact-link-color;
       margin: 0 12px;
+      &:hover {
+        color: @contact-link-color;
+      }
     }
     @media(max-width: @mobile-size) {
       display: none;

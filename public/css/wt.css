@@ -86,7 +86,7 @@ abbr[title] {
 }
 a {
   cursor: pointer;
-  color: #da4430;
+  color: #e85441;
   text-decoration: none;
 }
 a strong {
@@ -94,11 +94,11 @@ a strong {
 }
 a:hover,
 a:focus {
-  color: #da4430;
+  color: #e85441;
   text-decoration: underline;
 }
 a:active {
-  color: #df5d4c;
+  color: #e0564b;
 }
 code,
 pre {
@@ -192,8 +192,8 @@ tbody tr:nth-child(odd) th {
   width: 100%;
   z-index: 5;
   background-color: #28353c;
-  background: -webkit-linear-gradient(left, #37bdab, #28353c);
-  background: linear-gradient(to right, #37bdab, #28353c);
+  background: -webkit-linear-gradient(left, #29c6a4, #295063);
+  background: linear-gradient(to right, #29c6a4, #295063);
   margin-bottom: 0;
   padding-top: 28px;
   padding-bottom: 1rem;
@@ -210,7 +210,11 @@ tbody tr:nth-child(odd) th {
   right: 12px;
 }
 .masthead .contact a {
+  color: #e85441;
   margin: 0 12px;
+}
+.masthead .contact a:hover {
+  color: #e85441;
 }
 @media (max-width: 760px) {
   .masthead .contact {
@@ -284,8 +288,8 @@ tbody tr:nth-child(odd) th {
   box-sizing: content-box;
   padding: 6px 10px;
   margin: 0 auto;
-  border: 1px solid #da4430;
-  color: #da4430;
+  border: 1px solid #e85441;
+  color: #e85441;
   border-radius: 4px;
   text-align: center;
   -webkit-transition: background-color 0.15s cubic-bezier(0, 0, 0, 0), color 0.15s cubic-bezier(0, 0, 0, 0), border-color 0.15s cubic-bezier(0, 0, 0, 0);
@@ -294,11 +298,11 @@ tbody tr:nth-child(odd) th {
 .read-more:hover {
   text-decoration: none;
   color: white;
-  background-color: #da4430;
+  background-color: #e85441;
 }
 .read-more:active {
-  border-color: #df5d4c;
-  background-color: #df5d4c;
+  border-color: #e0564b;
+  background-color: #e0564b;
   text-decoration: none;
   -webkit-transition: none;
           transition: none;
