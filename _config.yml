@@ -11,7 +11,7 @@ by:                  by Wesley Tsai
 description:         ''
 url:                 http://wesleytsai.io
 baseurl:             ''
-paginate:            6
+paginate:            8
 
 # About/contact
 author:

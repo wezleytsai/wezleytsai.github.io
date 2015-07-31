@@ -6,8 +6,9 @@
   width: 100%;
   z-index: 5;
   background-color: @masthead-background-color;
+  background: linear-gradient(to right, @masthead-background-color-grad, @masthead-background-color);
   margin-bottom: 0;
-  padding-top:    1rem;
+  padding-top:    @masthead-height/2 - 22;
   padding-bottom: 1rem;
   margin-bottom:  3rem;
   .container {
@@ -22,17 +23,8 @@
     a {
       margin: 0 12px;
     }
-    @media(max-width: 500px) {
-      right: 6px;
-      a {
-        margin: 4px;
-      }
-    }
-    @media(max-width: 320px) {
-      right: 4px;
-      a {
-        margin: 2px;
-      }
+    @media(max-width: @mobile-size) {
+      display: none;
     }
   }
 }
@@ -52,3 +44,14 @@
   }
 }
 
+// Contact
+.contact.mobile {
+  display: none;
+  text-align: center;
+  @media(max-width: @mobile-size) {
+    display: block;
+  }
+  a {
+    margin: 0 10px;
+  }
+}

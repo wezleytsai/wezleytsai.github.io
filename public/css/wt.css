@@ -187,13 +187,15 @@ tbody tr:nth-child(odd) th {
 }
 .masthead {
   position: fixed;
-  height: 78px;
+  height: 100px;
   top: 0;
   width: 100%;
   z-index: 5;
   background-color: #28353c;
+  background: -webkit-linear-gradient(left, #37bdab, #28353c);
+  background: linear-gradient(to right, #37bdab, #28353c);
   margin-bottom: 0;
-  padding-top: 1rem;
+  padding-top: 28px;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
 }
@@ -210,20 +212,9 @@ tbody tr:nth-child(odd) th {
 .masthead .contact a {
   margin: 0 12px;
 }
-@media (max-width: 500px) {
+@media (max-width: 760px) {
   .masthead .contact {
-    right: 6px;
-  }
-  .masthead .contact a {
-    margin: 4px;
-  }
-}
-@media (max-width: 320px) {
-  .masthead .contact {
-    right: 4px;
-  }
-  .masthead .contact a {
-    margin: 2px;
+    display: none;
   }
 }
 .masthead-title {
@@ -241,10 +232,23 @@ tbody tr:nth-child(odd) th {
 .masthead-title a:enabled {
   text-decoration: none;
 }
+.contact.mobile {
+  display: none;
+  text-align: center;
+}
+@media (max-width: 760px) {
+  .contact.mobile {
+    display: block;
+  }
+}
+.contact.mobile a {
+  margin: 0 10px;
+}
 .wrap {
   position: relative;
   width: 100%;
-  top: 48px;
+  top: 50px;
+  padding-bottom: 10px;
 }
 .container {
   max-width: 25rem;
@@ -315,7 +319,7 @@ tbody tr:nth-child(odd) th {
 }
 .pagination-item {
   display: block;
-  padding: 2%;
+  padding: 15px;
   border: 1px solid #eeeeee;
   border-right: none;
   float: left;
@@ -336,8 +340,8 @@ a.pagination-item {
           transition: background-color 0.15s cubic-bezier(0, 0, 0, 0), color 0.15s cubic-bezier(0, 0, 0, 0), border-color 0.15s cubic-bezier(0, 0, 0, 0);
 }
 a.pagination-item:hover {
-  border-color: #1f7a8c;
-  background-color: #1f7a8c;
+  border-color: #444444;
+  background-color: #444444;
   color: white;
   text-decoration: none;
 }
@@ -348,7 +352,7 @@ a.pagination-item:active {
 .copyright {
   width: 30%;
   border-top: 1px solid #f0f0f0;
-  margin: 5rem auto;
+  margin: 25px auto;
   padding: 1.25rem;
   text-align: center;
   font-size: 0.8rem;
@@ -420,8 +424,8 @@ a.pagination-item:active {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: -16rem;
-  width: 16rem;
+  left: -20rem;
+  width: 20rem;
   visibility: hidden;
   overflow-y: auto;
   font-size: 1rem;
@@ -439,7 +443,7 @@ a.pagination-item:active {
   width: 100%;
   display: table;
   position: relative;
-  height: 78px;
+  height: 100px;
 }
 .sidebar-item .container {
   padding: 0;
@@ -483,7 +487,7 @@ a.sidebar-nav-item:focus {
 }
 .sidebar-container {
   position: fixed;
-  top: 19px;
+  top: 26px;
   left: 1rem;
   z-index: 15;
   -webkit-transition: translate 0.1s ease-in-out;
@@ -492,8 +496,8 @@ a.sidebar-nav-item:focus {
 .sidebar-icon {
   display: block;
   text-align: center;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: rgba(255, 255, 255, 0);
   border-radius: 5%;
   cursor: pointer;
@@ -508,10 +512,10 @@ a.sidebar-nav-item:focus {
   display: inline-block;
   pointer-events: none;
   position: absolute;
-  height: 3px;
-  width: 24px;
+  height: 0.1875rem;
+  width: 1.5rem;
   border-radius: 0;
-  background: #ffffff;
+  background: #000000;
   opacity: 1;
   -webkit-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
       -ms-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
@@ -520,14 +524,14 @@ a.sidebar-nav-item:focus {
           transition: background-color 0.1s ease-in-out, top 0.15s ease-in-out 0.15s, opacity 0.05s ease-in-out 0.15s, transform 0.15s ease-in-out;
 }
 .sidebar-icon span:nth-child(1) {
-  top: 9.5px;
+  top: 0.59375rem;
 }
 .sidebar-icon span:nth-child(2),
 .sidebar-icon span:nth-child(3) {
-  top: 18.5px;
+  top: 1.15625rem;
 }
 .sidebar-icon span:nth-child(4) {
-  top: 27.5px;
+  top: 1.71875rem;
 }
 .open .sidebar-icon span {
   -webkit-transition: top 0.15s ease-in-out, opacity 0s ease-in-out 0.15s, -webkit-transform 0.15s ease-in-out 0.15s;
@@ -535,7 +539,7 @@ a.sidebar-nav-item:focus {
 }
 .open .sidebar-icon span:nth-child(1),
 .open .sidebar-icon span:nth-child(4) {
-  top: 18.5px;
+  top: 1.15625rem;
   opacity: 0;
 }
 .open .sidebar-icon span:nth-child(2) {
@@ -568,18 +572,18 @@ a.sidebar-nav-item:focus {
   visibility: visible;
 }
 .open ~ .sidebar {
-  -webkit-transform: translateX(16rem);
-      -ms-transform: translateX(16rem);
-          transform: translateX(16rem);
+  -webkit-transform: translateX(20rem);
+      -ms-transform: translateX(20rem);
+          transform: translateX(20rem);
 }
 .open {
-  -webkit-transform: translateX(11.2rem);
-      -ms-transform: translateX(11.2rem);
-          transform: translateX(11.2rem);
+  -webkit-transform: translateX(15.5rem);
+      -ms-transform: translateX(15.5rem);
+          transform: translateX(15.5rem);
 }
 .open .sidebar-icon {
   background-color: #808080;
 }
 .open .sidebar-icon span {
-  background-color: #000000;
+  background-color: #ffffff;
 }

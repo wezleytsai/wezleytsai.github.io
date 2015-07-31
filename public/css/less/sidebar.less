@@ -179,7 +179,7 @@ a.sidebar-nav-item:focus {
 }
 
 .open {
-  transform: translateX(0.7 * @sidebar-width);
+  transform: translateX(@sidebar-width - @sidebar-icon-size - 2 * @sidebar-icon-left);
   .sidebar-icon {
     background-color: @sidebar-icon-color-active;
     span {

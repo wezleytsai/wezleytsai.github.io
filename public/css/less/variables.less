@@ -14,35 +14,39 @@
 @code-background-color: #EAEDF2;
 
 // masthead
-@masthead-height: 78px;
+@masthead-height: 100px;
 @masthead-background-color: rgb(40, 53, 60);
+@masthead-background-color-grad: rgb(55, 189, 171);
 @logo-color: #ededed;
 @logo-offset-y: 11px;
 @contact-offset-y: -26px;
 @contact-offset-x: 12px;
 
+@mobile-size: 760px;
+
 // body
-@wrap-offset-y: 48px;
+@wrap-offset-y: @masthead-height - 50px;
 @post-title-hover-color: #0090C1;
 @light-border-color: #F0F0F0;
 
-@pagination-button-hover-color: #1F7A8C;
+@pagination-button-hover-color: #444;
+@pagination-button-hover-border: #444;
 @pagination-button-border: #eee;
 
 // posts
 @date-color: #9a9a9a;
 
 // sidebar
-@sidebar-width: 16rem;
+@sidebar-width: 20rem;
 
-@sidebar-icon-top: 19px;
+@sidebar-icon-top: @masthead-height/2 - 20px * 1.2;
 @sidebar-icon-left: 1rem;
-@sidebar-icon-size: 40px;
+@sidebar-icon-size: 2.5rem;
 @sidebar-icon-bar-height: 0.075 * @sidebar-icon-size;
 @sidebar-icon-bar-width:  0.6 * @sidebar-icon-size;
 
-@sidebar-icon-bar-color-normal: #fff;
-@sidebar-icon-bar-color-active: #000;
+@sidebar-icon-bar-color-normal: #000;
+@sidebar-icon-bar-color-active: #fff;
 @sidebar-icon-color-normal: rgba(255, 255, 255, 0);
 @sidebar-icon-color-active: #808080;
 
