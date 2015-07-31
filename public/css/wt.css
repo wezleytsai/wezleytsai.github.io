@@ -423,13 +423,14 @@ a.pagination-item:active {
   color: inherit;
 }
 .sidebar {
-  -webkit-transition: all 0.225s ease-in-out, left 0.225s ease-in-out;
-          transition: all 0.225s ease-in-out, left 0.225s ease-in-out;
+  -webkit-transition: all 0.45s ease-in-out, left 0.45s ease-in-out;
+          transition: all 0.45s ease-in-out, left 0.45s ease-in-out;
   position: fixed;
   top: 0;
   bottom: 0;
-  left: -20rem;
-  width: 20rem;
+  z-index: 10;
+  left: -18rem;
+  width: 18rem;
   visibility: hidden;
   overflow-y: auto;
   font-size: 1rem;
@@ -441,7 +442,7 @@ a.pagination-item:active {
   color: #fff;
 }
 .sidebar a:hover {
-  color: #00b4cd;
+  color: #37bdab;
 }
 .sidebar-item {
   width: 100%;
@@ -489,13 +490,13 @@ a.sidebar-nav-item:focus {
   background-color: rgba(0, 0, 0, 0.1);
   border-color: transparent;
 }
-.sidebar-container {
+.sidebar-icon-container {
   position: fixed;
   top: 26px;
   left: 1rem;
   z-index: 15;
-  -webkit-transition: translate 0.1s ease-in-out;
-          transition: translate 0.1s ease-in-out;
+  -webkit-transition: translate 0.3s ease-in-out;
+          transition: translate 0.3s ease-in-out;
 }
 .sidebar-icon {
   display: block;
@@ -505,8 +506,8 @@ a.sidebar-nav-item:focus {
   background-color: rgba(255, 255, 255, 0);
   border-radius: 5%;
   cursor: pointer;
-  -webkit-transition: background-color 0.1s ease-in-out;
-          transition: background-color 0.1s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+          transition: background-color 0.3s ease-in-out;
 }
 .sidebar-icon active {
   position: relative;
@@ -524,8 +525,8 @@ a.sidebar-nav-item:focus {
   -webkit-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
       -ms-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
           transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
-  -webkit-transition: background-color 0.1s ease-in-out, top 0.15s ease-in-out 0.15s, opacity 0.05s ease-in-out 0.15s, -webkit-transform 0.15s ease-in-out;
-          transition: background-color 0.1s ease-in-out, top 0.15s ease-in-out 0.15s, opacity 0.05s ease-in-out 0.15s, transform 0.15s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out;
+          transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s, transform 0.3s ease-in-out;
 }
 .sidebar-icon span:nth-child(1) {
   top: 0.59375rem;
@@ -537,9 +538,18 @@ a.sidebar-nav-item:focus {
 .sidebar-icon span:nth-child(4) {
   top: 1.71875rem;
 }
+.open {
+  -webkit-transform: translateX(13.5rem);
+      -ms-transform: translateX(13.5rem);
+          transform: translateX(13.5rem);
+}
+.open .sidebar-icon {
+  background-color: transparent;
+}
 .open .sidebar-icon span {
-  -webkit-transition: top 0.15s ease-in-out, opacity 0s ease-in-out 0.15s, -webkit-transform 0.15s ease-in-out 0.15s;
-          transition: top 0.15s ease-in-out, opacity 0s ease-in-out 0.15s, transform 0.15s ease-in-out 0.15s;
+  background-color: #29c6a4;
+  -webkit-transition: top 0.3s ease-in-out, opacity 0s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out 0.3s;
+          transition: top 0.3s ease-in-out, opacity 0s ease-in-out 0.3s, transform 0.3s ease-in-out 0.3s;
 }
 .open .sidebar-icon span:nth-child(1),
 .open .sidebar-icon span:nth-child(4) {
@@ -559,7 +569,7 @@ a.sidebar-nav-item:focus {
 .masthead,
 .wrap,
 .sidebar,
-.sidebar-container,
+.sidebar-icon-container,
 .sidebar-icon,
 .sidebar-icon span {
   -webkit-backface-visibility: hidden;
@@ -567,27 +577,15 @@ a.sidebar-nav-item:focus {
 }
 .masthead,
 .wrap,
-.sidebar-container {
-  -webkit-transition: -webkit-transform 0.225s ease-in-out;
-          transition: transform 0.225s ease-in-out;
+.sidebar-icon-container {
+  -webkit-transition: -webkit-transform 0.45s ease-in-out;
+          transition: transform 0.45s ease-in-out;
 }
 .open + .sidebar {
-  z-index: 10;
   visibility: visible;
 }
 .open ~ .sidebar {
-  -webkit-transform: translateX(20rem);
-      -ms-transform: translateX(20rem);
-          transform: translateX(20rem);
-}
-.open {
-  -webkit-transform: translateX(15.5rem);
-      -ms-transform: translateX(15.5rem);
-          transform: translateX(15.5rem);
-}
-.open .sidebar-icon {
-  background-color: #808080;
-}
-.open .sidebar-icon span {
-  background-color: #ffffff;
+  -webkit-transform: translateX(18rem);
+      -ms-transform: translateX(18rem);
+          transform: translateX(18rem);
 }

@@ -1,5 +1,5 @@
 <!-- Sidebar icon -->
-<div class="sidebar-container">
+<div class="sidebar-icon-container">
   <div class="sidebar-icon">
     <span></span>
     <span></span>
@@ -63,9 +63,9 @@
   $(function() {
     $(document).click(function(e) {
       var $target = $(e.target);
-      var $sidebarButton = $('.sidebar-container');
+      var $sidebarButton = $('.sidebar-icon-container');
       var $sidebar = $('.sidebar');
-      if($target.closest('.sidebar-container').length) {
+      if($target.closest('.sidebar-icon-container').length) {
         // if sidebar button clicked => toggle
         $sidebarButton.toggleClass('open');
       } else if(!$target.closest('.sidebar').length) {

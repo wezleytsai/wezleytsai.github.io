@@ -20,10 +20,13 @@
 @masthead-background-color-lite: rgb(55, 189, 171);
 
 @masthead-background-color-beg: rgb(41, 198, 164);
-@masthead-background-color-mid: rgb(167, 56, 92);
 @masthead-background-color-end: rgb(41, 80, 99);
+// @masthead-background-color-mid: rgb(167, 56, 92);
 // @masthead-background-color-mid: rgb(167, 56, 92); // red
 // @masthead-background-color-end: rgb(40, 104, 150); // blue
+
+@masthead-background-gradient: linear-gradient(to right, @masthead-background-color-beg, @masthead-background-color-end);
+
 @logo-color: #ededed;
 @logo-offset-y: 11px;
 
@@ -46,7 +49,7 @@
 @date-color: #9a9a9a;
 
 // sidebar
-@sidebar-width: 20rem;
+@sidebar-width: 18rem;
 
 @sidebar-icon-top: @masthead-height/2 - 20px * 1.2;
 @sidebar-icon-left: 1rem;
@@ -55,16 +58,16 @@
 @sidebar-icon-bar-width:  0.6 * @sidebar-icon-size;
 
 @sidebar-icon-bar-color-normal: #000;
-@sidebar-icon-bar-color-active: #fff;
+@sidebar-icon-bar-color-active: rgb(41, 198, 164);
 @sidebar-icon-color-normal: rgba(255, 255, 255, 0);
-@sidebar-icon-color-active: #808080;
+@sidebar-icon-color-active: transparent;
 
 @sidebar-color: rgba(255,255,255,.6);
 @sidebar-background-color: #252525;
 @sidebar-link-color: #fff;
-@sidebar-link-hover-color: #00B4CD;
+@sidebar-link-hover-color: rgb(55, 189, 171);
 
 @sidebar-nav-border-color: rgba(255, 255, 255, .1);
 @sidebar-nav-item-active: rgba(0, 0, 0, 0.1);
 
-@animation-speed: .15s;
+@animation-speed: .30s;

@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   bottom: 0;
+  z-index: 10;
   left: -@sidebar-width;
   width: @sidebar-width;
   visibility: hidden;
@@ -76,13 +77,12 @@ a.sidebar-nav-item:focus {
 }
 
 // Animation
-.sidebar-container {
+.sidebar-icon-container {
   position: fixed;
   top: @sidebar-icon-top;
   left: @sidebar-icon-left;
   z-index: 15;
-
-  transition: translate .1s ease-in-out;
+  transition: translate @animation-speed ease-in-out;
 }
 
 .sidebar-icon {
@@ -93,7 +93,7 @@ a.sidebar-nav-item:focus {
   background-color: @sidebar-icon-color-normal;
   border-radius: 5%;
   cursor: pointer;
-  transition: background-color .1s ease-in-out;
+  transition: background-color @animation-speed ease-in-out;
   active {
     position: relative;
     top: 1.5px;
@@ -109,9 +109,9 @@ a.sidebar-nav-item:focus {
     opacity: 1;
 
     transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
-    transition: background-color .1s ease-in-out,
+    transition: background-color @animation-speed ease-in-out,
                 top @animation-speed ease-in-out @animation-speed,
-                opacity .05s ease-in-out @animation-speed,
+                opacity @animation-speed ease-in-out @animation-speed,
                 transform @animation-speed ease-in-out;
   }
 }
@@ -130,8 +130,11 @@ a.sidebar-nav-item:focus {
 }
 
 .open {
+  transform: translateX(@sidebar-width - @sidebar-icon-size - 2 * @sidebar-icon-left);
   .sidebar-icon {
+    background-color: @sidebar-icon-color-active;
     span {
+      background-color: @sidebar-icon-bar-color-active;
       transition: top @animation-speed ease-in-out,
                   opacity 0s ease-in-out @animation-speed,
                   transform @animation-speed ease-in-out @animation-speed;
@@ -156,7 +159,7 @@ a.sidebar-nav-item:focus {
 .masthead,
 .wrap,
 .sidebar,
-.sidebar-container,
+.sidebar-icon-container,
 .sidebar-icon,
 .sidebar-icon span
 {
@@ -165,25 +168,14 @@ a.sidebar-nav-item:focus {
 
 .masthead,
 .wrap,
-.sidebar-container {
+.sidebar-icon-container {
   transition:         transform @animation-speed * 1.5 ease-in-out;
 }
 
 .open + .sidebar {
-  z-index: 10;
   visibility: visible;
 }
 
 .open ~ .sidebar {
   transform: translateX(@sidebar-width);
-}
-
-.open {
-  transform: translateX(@sidebar-width - @sidebar-icon-size - 2 * @sidebar-icon-left);
-  .sidebar-icon {
-    background-color: @sidebar-icon-color-active;
-    span {
-      background-color: @sidebar-icon-bar-color-active;
-    }
-  }
 }
