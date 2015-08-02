@@ -7,6 +7,7 @@ title: MongoDB Setup - Data Directory Not Found or Permission Denied
 [mongodb docs]: http://docs.mongodb.org/manual/installation/
 
 <!-- post -->
+Fixing error messages that I got when setting up MongoDB.
 
 <!--excerpt-->
 

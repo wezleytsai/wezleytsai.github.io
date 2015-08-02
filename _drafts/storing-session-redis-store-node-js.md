@@ -1,8 +1,12 @@
 ---
 layout: post
-title: Storing Session Values using Redis Store in Node JS App
+title: Storing Session Values using Redis Store in Node.js App
 ---
+<!-- links -->
 
+<!-- post -->
+
+<!--excerpt-->
 
 ```javascript
 var session = require('express-session');
