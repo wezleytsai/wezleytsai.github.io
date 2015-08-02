@@ -8,7 +8,7 @@ body {
   padding: 0;
 }
 html {
-  font-family: 'Source Sans Pro', Palatino, serif;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
   font-size: 18px;
   line-height: 1.4em;
 }
@@ -102,8 +102,8 @@ a:active {
 }
 code,
 pre {
-  font-family: 'Inconsolata', Menlo, 'Courier New', monospace;
-  font-size: 95%;
+  font-family: 'Oxygen Mono', 'Courier New', monospace;
+  font-size: 90%;
 }
 pre,
 pre code {
@@ -118,7 +118,7 @@ pre code {
 }
 code {
   border-radius: 2px;
-  padding: 0.15rem 0.35rem;
+  padding: 2px 4px;
   background-color: #eaedf2;
   color: #383838;
 }
@@ -520,7 +520,7 @@ a.sidebar-nav-item:focus {
   height: 0.1875rem;
   width: 1.5rem;
   border-radius: 0;
-  background: #000000;
+  background: #252525;
   opacity: 1;
   -webkit-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);
       -ms-transform: translate(-50%, 0) rotate(0deg) scale(1, 1);

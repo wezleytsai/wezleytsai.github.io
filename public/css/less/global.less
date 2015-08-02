@@ -10,7 +10,7 @@ body {
 }
 
 html {
-  font-family: 'Source Sans Pro', Palatino, serif;
+  font-family: @global-font;
   font-size: 18px;
   line-height: 1.4em;
 }
@@ -110,8 +110,8 @@ a {
 // Code
 code,
 pre {
-  font-family: 'Inconsolata', Menlo, 'Courier New', monospace;
-  font-size: 95%;
+  font-family: @code-font;
+  font-size: @code-font-size;
 }
 
 pre,
@@ -128,7 +128,7 @@ pre code {
 
 code {
   border-radius: 2px;
-  padding: 0.15rem 0.35rem;
+  padding: 2px 4px;
   background-color: @code-background-color;
   color: @code-text-color;
 }
