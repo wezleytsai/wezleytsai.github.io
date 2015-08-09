@@ -17,13 +17,13 @@ Mergesort is a divide-and-conquer array sorting algorithm that can be implemente
 
 <!--excerpt-->
 
-With an array `[4, 7, 3, 5]`, this is the mergesort procedure:
+As an example, with an array `[4, 7, 3, 5]`, this is the mergesort procedure:
 
 ```
-[4, 7, 3, 5] // starting array
-[4], [7], [3], [5] // split the array into n lists
-[4, 7], [3, 5] // merge lists (1)
-[3, 4, 5, 7] // merge lists (2)
+[4, 7, 3, 5]        // starting array
+[4], [7], [3], [5]  // split the array into n lists
+[4, 7], [3, 5]      // merge lists (1)
+[3, 4, 5, 7]        // merge lists (2)
 ```
 
 As you can see, the heavy lifting is done in the **merge lists** step, as that step requires comparing elements and placing them in order.
