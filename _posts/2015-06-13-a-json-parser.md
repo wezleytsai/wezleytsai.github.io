@@ -9,6 +9,11 @@ title: A JSON Parser
 [progzoo-rdp-tutorial]: http://progzoo.net/wiki/Recursive_Descent_Parser_Tutorial
 [mdn-json-parse]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 [json.org]: http://json.org
+
+<!-- images -->
+
+[parse-tree]: /assets/json_parser_parse_tree.png
+
 <!-- post -->
 
 I recently built a JSON parser in JavaScript from scratch. I learned a lot on data formats/parse trees/grammar/recursion that helped me break down and solve the problem. There are many different (and perhaps better) approaches to parsing JSON, but here's a little walkthrough of my implementation. First, a little background...
@@ -61,13 +66,7 @@ The grammar for booleans, strings, numbers, and null can also be further defined
 
 A parse tree, or expression tree, is the result of parsing the text into components that fit the grammar. In our example, given the JSON text **[9,&ldquo;cat"]**, the parse tree would look something like this:
 
-```
-<JSON> --- <value> --- <array> --- "["
-                               \__ <value> --- <number> --- 9
-                               \__ ","
-                               \__ <value> --- <string> --- "cat"
-                               \__ "]"
-```
+![Parse Tree][parse-tree]
 
 A **Recursive Descent Parser**, one of the simplest parsers, uses a top-down parsing approach, meaning we look at the highest level (the array in this case), and then work downwards (or rightwards in my graph) to parse its elements.
 

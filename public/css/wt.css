@@ -398,8 +398,6 @@ a.pagination-item:active {
 .post img {
   margin: 1rem auto;
   padding: 1rem 1rem;
-  border-radius: 6px;
-  border: 1px solid #EAEAEA;
 }
 .related {
   padding-top: 2rem;
