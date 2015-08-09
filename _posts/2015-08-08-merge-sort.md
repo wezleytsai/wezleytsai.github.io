@@ -4,7 +4,7 @@ title: Array Sorting Algorithms, Part 1: Mergesort
 ---
 <!-- links -->
 
-[Marq]: http://www.google.com
+[Marq]: http://marqshort.github.io/
 
 <!-- post -->
 
