@@ -62,7 +62,7 @@ This is the base case. If the array is empty or has length of 1, no sorting is r
 if( array.length <= 1 ) return array;
 ```
 
-If the array has more than 1 element, then we want to break it down and sort it. The first line simply splices half of the array (or if there are an odd number of elements, it splices `(n + 1)/2` elements). Then, each half is passed into `mergesort`.
+If the array has more than 1 element, then we want to break it down and sort it. The first line simply splices half of the array (or if there are an odd number of elements, it splices the first (n + 1)/2 elements). Then, each half is passed into `mergesort`.
 
 ```javascript
 var first = array.splice(0, Math.floor(array.length/2));
@@ -75,16 +75,18 @@ The code above may not look like it is breaking the list down into _n_ sublists,
 
 Now, once we get back to the current stack, we should have two sorted sublists, `first`, and `array`. The only work to do is to merge them to create a single sorted list.
 
-What we will do here is go through each element in the `first` array, and insert them in the appropriate location of the `array` array. That is, if `first` was `[3, 4, 5]`, and `array` was `[2, 6, 8]`, `3` would get inserted at index 1, `4` at 2, and `5` at 3.
+What we will do here is go through each element in the `first` array, and insert them in the appropriate location of the `array` array. That is, if `first` was `[3, 4, 5]`, and `array` was `[2, 6, 8]`, `3` would get inserted at index 1, `4` at 2, and `5` at 3. The result being `[2, 3, 4, 5, 6, 8]`.
 
-First we create a while loop that will continue until `first` is out of elements. Then we loop through `array` and since `first` is sorted, we just need to compare `first[0]` against `array[i]`. If `first[0]` is smaller, then it shoudl be inserted at index `i`. The next element of `first[1]` must be greater than or equal to `first[0]`, so we can change our `start` variable to now point at index `i + 1`, since that is the smallest index that is could be inserted at.
+First we create a while loop that will continue until `first` is out of elements. Within the `while` loop, we iterate through `array` and since `first` is sorted, we just need to compare `first[0]` against `array[i]`. If `first[0]` is smaller, then it shoudl be inserted at index `i`. The next element of `first[1]` must be greater than or equal to `first[0]`, so we can change our `start` variable to now point at index `i + 1`, since that is the smallest index that is could be inserted at.
 
-Here, I named the `while` loop so that we can `continue` it once we have inserted an element from `first` into `array` without executing the code after the `for` loop. There are two possible scenarios:
+Here, I named the `while` loop so that we can `continue` it once we have inserted an element from `first` into `array` without executing the code after the `for` loop. I will explain the code after the `for` loop in just a moment. There are two possible scenarios as we go through this `while` loop:
 
-1. `first` is depleted before reaching the end of `array`
-2. The end of `array` is reached, but `first` is not empty
+1. `first` is depleted before `start` reaches the end of `array`
+2. `start` reaches the end of `array`, but `first` is not depleted
 
-Under the second scenario, `continue` does not get executed, so each element in `first` gets pushed into `array` instead. After each `push`, setting `start` equal to `array.length` will skip the `for` loop altogether on each successive iteration of the `while` loop.
+Under the first scenario, we will reach a point where the last element of `first` gets inserted, and `continue outer` is called. The `while` loop condition fails, and sorting is done. Nothing is returned because this is an in-place sorting algorithm.
+
+The second scenario occurs if some element in `first` is greater than all the elements in `array`.Under this scenario, `continue` does not get executed, and the code after the `for` loop does. So each element in `first` gets pushed into `array`. After each `push`, setting `start` equal to `array.length` will skip the `for` loop altogether on successive iterations of the `while` loop.
 
 This _merge_ step is where most of the work is done. I set up the algorithm this way to reduce space complexity, but there are definitely a multitude of methods to merge two sorted arrays. A helper function can definitely be warranted for this.
 
