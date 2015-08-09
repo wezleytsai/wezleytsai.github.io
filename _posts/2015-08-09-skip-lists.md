@@ -5,7 +5,7 @@ title: Implementing Skip Lists
 <!-- links -->
 
 [MIT]: https://www.youtube.com/watch?v=IXRzBVUgGl8
-[skip-list]: https://github.com/wezleytsai/skip-list.git
+[repo]: https://github.com/wezleytsai/skip-list.git
 
 <!-- images -->
 
@@ -21,7 +21,7 @@ title: Implementing Skip Lists
 
 <!-- post -->
 
-Skip lists are interesting data structures that rely on a random element in its design. The resulting data structure allows O(log(n)) time complexity for search, insert, and delete operations with **high probability**. Here is a walkthrough of a skip list implementation, also available on my [Github repo] [skip-list].
+Skip lists are interesting data structures that rely on a random element in its design. The resulting data structure allows O(log(n)) time complexity for search, insert, and delete operations with **high probability**. Here is a walkthrough of a skip list implementation, also available on my [Github repo] [repo].
 
 <!--excerpt-->
 
@@ -62,7 +62,7 @@ The [MIT lecture] [MIT] on skip lists is a great resource for going deeper into 
 
 ### Nodes ###
 
-Now we need the nodes that will be used for the skip list. These are similar to the nodes of a linked list, except instead of just `previous` and `next` links, they also need `above` and `below` links. I'll go with `up`, `down`, `left`, `right` for sake of easily aligning them with the steps of the algorithm.
+Now we need the nodes that will be used for the skip list. These are similar to the nodes of a doubly linked list, except instead of just `previous` and `next` links, they also need `above` and `below` links. I'll go with `up`, `down`, `left`, `right` for sake of easily aligning them with the steps of the algorithm.
 
 ```javascript
 var Node = function(value) {
@@ -194,7 +194,44 @@ while( at ) {
 return true;
 ```
 
-Since I am reassigning the `head` pointer. I need a reference to `this`, hence the `call` binding.
+Since I am reassigning the `head` pointer. I need a reference to the instance of the skip list, hence the `call` binding.
+
+The complete `remove` method looks like this:
+
+```javascript
+Skiplist.prototype.remove = function(value) {
+  return function remove(at, value) {
+    // value found -> perform delete
+    if( at.value === value ) {
+      while( at ) {
+        at.remove();
+        // if nothing else is on this level // and not on level 1
+        if( at.left === this.head && !at.right && this.head.down) {
+          // set head to next level down
+          this.head = this.head.down;
+          this.head.up = null;
+        }
+        at = at.down;
+      }
+      // remove complete
+      return true;
+    }
+
+    // if right is smaller, go right
+    if( at.right && at.right.value <= value ) {
+      return remove.call(this, at.right, value);
+    }
+
+    // otherwise, go down if possible
+    if( at.down ) {
+      return remove.call(this, at.down, value);
+    }
+
+    // value not found -> remove fail
+    return false;
+  }.call(this, this.head, value);
+};
+```
 
 ### Insert ###
 
@@ -213,7 +250,7 @@ One thing to note and verify for yourself is that unlike `remove`, once I am at 
 Finally, if the value is found during this search process, then the value already exists in the skip list and I should return `false`.
 
 ```javascript
-kiplist.prototype.insert = function(value) {
+Skiplist.prototype.insert = function(value) {
   var drops = []; // *
   return function insert(at, value) {
     // value already exists, insertion fail
@@ -239,7 +276,7 @@ One thing you may have noticed is the new `drops` array. This is what it is for:
 
 ![Skip List Insert][skip-list-insert]
 
-These are the nodes that I add to the `drops` array, and are in fact the nodes after which I would insert the promoted nodes. If by chance, I am promoting above the highest current level, then I need to create a new node of `-Infinity` and reassign the `head` pointer. And for the same reason as the `delete` method, I need to use `call` and bind it to `this`.
+These are the nodes that I add to the `drops` array, and are in fact the nodes after which I would insert the promoted nodes. If by chance, I am promoting above the highest current level, then I need to create a new node of `-Infinity` and reassign the `head` pointer. And for the same reason as the `delete` method, I need to use `call` and bind it to the skip list instance.
 
 ```javascript
 var base = new Node(value);
@@ -266,7 +303,54 @@ while( coinFlip() ) {
 return true;
 ```
 
-As an example, invoking `mySkipList.insert(8)` might result in a skip list looking like this:
+The full `insert` method looks like this:
+
+```javascript
+Skiplist.prototype.insert = function(value) {
+  var drops = [];
+  return function insert(at, value) {
+    // value already exists, insertion fail
+    if( at.value === value ) return false;
+
+    // if right is smaller, go right
+    if( at.right && at.right.value <= value ) {
+      return insert.call(this, at.right, value);
+    }
+
+    // otherwise, go down if possible
+    if( at.down ) {
+      drops.push(at);
+      return insert.call(this, at.down, value);
+    }
+
+    // if can't go down, insert
+    var base = new Node(value);
+    base.insertAfter(at);
+
+    while( coinFlip() ) {
+      var promote = new Node(value);
+      promote.stackOnTop(base);
+      base = promote;
+
+      var drop = drops.pop();
+      if( drop ) {
+        promote.insertAfter(drop);
+      } else {
+        var newHead = new Node(-Infinity);
+        newHead.stackOnTop(this.head);
+        this.head = newHead;
+
+        promote.insertAfter(this.head);
+      }
+    }
+
+    // insert complete
+    return true;
+  }.call(this, this.head, value);
+};
+```
+
+As an example, invoking `mySkipList.insert(8)` might result in a skip list looking like this, where the nodes and links in green are the result of the insert operation:
 
 ![Skip List Insert 8][skip-list-insert-complete]
 
