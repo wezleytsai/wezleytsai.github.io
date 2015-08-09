@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Array Sorting Algorithms, Part 1: Mergesort
+title: Array Sorting Algorithms, Part 1&#58; Mergesort
 ---
 <!-- links -->
 
