@@ -22,6 +22,7 @@ author:
 # Custom vars
 mygithub:            https://github.com/wezleytsai
 mylinkedin:          https://www.linkedin.com/in/wezleytsai
+myangellist:         https://angel.co/wesleytsai
 
 # Exclude vendor
 exclude:             [vendor]
