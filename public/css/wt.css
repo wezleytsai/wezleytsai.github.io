@@ -118,8 +118,9 @@ pre code {
 }
 code {
   border-radius: 2px;
-  padding: 1px 4px;
+  padding: 0 2px;
   background-color: #eaedf2;
+  border: 1px solid #c0c2c7;
   color: #383838;
 }
 .highlight {

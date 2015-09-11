@@ -12,6 +12,7 @@ description:         ''
 url:                 http://wesleytsai.io
 baseurl:             ''
 paginate:            8
+port:                1337
 
 # About/contact
 author:
