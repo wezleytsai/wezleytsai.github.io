@@ -321,7 +321,7 @@ The pseudoclassical instantiation pattern is usually the most popular. However, 
 
 ```javascript
 Squirtle.prototype = Object.create(Pokemon.prototype); // correct
-Squirtle.prototype = new Pokemon; // used to be common practice, not correct
+Squirtle.prototype = new Pokemon(); // used to be common practice, not correct
 ```
 
 Failed method lookups will fall through to the instance of Pokemon, and then to the prototype of Pokemon, as desired. However, this created problems if the `Pokemon` constructor required a lot of initialization parameters and could not accept undefined ones.
