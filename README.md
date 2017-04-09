@@ -1,3 +1,3 @@
 # wezleytsai.github.io
 
-My blog [wesleytsai.com](http://wesleytsai.com).
+My blog [wesleytsai.io](http://wesleytsai.io).
