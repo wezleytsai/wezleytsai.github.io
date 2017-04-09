@@ -4,7 +4,7 @@
   "description": "",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "lessc public/css/less/wt.less public/css/wt.css --autoprefix"
   },
   "repository": {
     "type": "git",
