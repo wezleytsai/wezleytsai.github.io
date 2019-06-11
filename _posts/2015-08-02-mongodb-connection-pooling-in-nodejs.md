@@ -123,10 +123,10 @@ exports.connect = function(callback) {
     if( err ) throw err;
     db = database;
     callback();
-  }
+  })
 }
 
-exports.doSomethingWithDatabase = function(callback){
+exports.doSomethingWithDatabase = function(callback) {
   // this is using the same db connection
   db.collection('db_name').find({}, function(err, docs) {
     // do something
