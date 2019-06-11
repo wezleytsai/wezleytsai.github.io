@@ -28,7 +28,6 @@ myangellist:         https://angel.co/wesleytsai
 exclude:             [vendor]
 
 # Conversion
-markdown: redcarpet
 excerpt_separator: "<!--excerpt-->"
 
 # Sitemap
